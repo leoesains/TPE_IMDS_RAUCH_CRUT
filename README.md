@@ -8,5 +8,5 @@ Aguirre Marcela
 Oruezabal Mauricio
 Esains Sebastián
 Miller Eugenio
-Eloiza Joaquín
+Loiza Joaquín
 Dehesa Romina

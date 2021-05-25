@@ -1,0 +1,30 @@
+#header{
+    height: 200px;
+    background-color: #324C7C;
+    display: flex;
+    align-items: center;
+}
+footer{
+    padding: 30px;
+    background-color: #324C7C;
+
+}
+.fondo{
+    width: 100%;
+}
+.redesSoc{
+    padding: 20px;
+    width: 200px;
+    
+}
+.logo-principal{
+    width: 500px;
+    margin: auto;
+}
+.recuadroFooter{
+    border-top: solid 5px #399917;
+    border-bottom: solid 5px #399917;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

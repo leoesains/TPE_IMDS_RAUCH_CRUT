@@ -26,7 +26,16 @@ class PublicController{
     }
 
     public function showMaterial($idMaterial){
-        echo("detalle de material " . $idMaterial);
+        //Pido a la BD la forma de entrega del material con el id que recibo por parámetros
+        $material= $this->materialesModel->get($id_material);
+
+        //Mando el resultado a la vista
+        if(!empty($material)){
+            $this->view->showFormaDeEntrega(); //-->VER NOMBRE DE LA FUNCIÓN
+        }
+        else {
+            $this->view->showError("El material al que intenta acceder no existe") 
+        }
     }
 
     public function showFormAviso(){

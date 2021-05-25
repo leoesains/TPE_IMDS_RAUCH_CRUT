@@ -22,4 +22,11 @@ class MaterialesModel extends dbConectionModel {
         $material = $query->fetch(PDO::FETCH_OBJ);    
         return $material;
     }
+    //ingresa un nuevo material a la BBDD
+    function insertMaterial($nombre_material, $requerimientos) {
+        //enviamos la consulta
+        $sql = "INSERT INTO material(nombre, requerimiento_de_recibo) VALUES (?, ?)";
+        $query = $this->getConnection()->prepare($sql);  
+        $query->execute([$nombre_material, $requerimientos]);        
+    }
 }

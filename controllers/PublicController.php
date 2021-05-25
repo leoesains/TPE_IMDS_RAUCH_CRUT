@@ -1,20 +1,20 @@
 <?php
 
-// require_once 'models/materialesModel.php'; -- Una vez que esté creado
-// require_once 'views/ --> nombre de la vista, una vez que esté creada
+//require_once 'models/materialesModel.php'; 
+require_once 'views/View.php';
 
 class PublicController{
 
-    //private $materialesModel; -- Una vez haya sido creado el model
-    //private $view;
+    //private $materialesModel; 
+    private $view;
 
-    /*public function __construct() {
-        $this.materialesModel = new MaterialesMode();
-        $this.view = new --> view cuando se cree
-    } */  //---> Descomentar cuando el materialesModel esté creado 
+    public function __construct() {
+       // $this->materialesModel = new MaterialesMode();
+        $this->view = new View;
+    }   //---> Descomentar cuando el materialesModel esté creado 
 
     public function showHome(){
-        echo("home");
+        $this->view->showHome();
     }
 
     public function showMateriales(){
@@ -34,7 +34,7 @@ class PublicController{
             $this->view->showFormaDeEntrega(); //-->VER NOMBRE DE LA FUNCIÓN
         }
         else {
-            $this->view->showError("El material al que intenta acceder no existe") 
+            $this->view->showError("El material al que intenta acceder no existe");
         }
     }
 

@@ -28,12 +28,13 @@
     </select>
     <!--Opcional: Foto .jpg y .png hasta 1 Mb-->
     <input type="file" name="input_name">
+    <div class="btnSolicitud">
+    <!-- Boton para enviar solicitud de retiro de materiales -->
+    <input type="submit" value="Enviar solicitud">
+    </div>
     </form>
 </div>
-<div class="btnSolicitud">
- <!-- Boton para enviar solicitud de retiro de materiales -->
- <input type="submit" value="Enviar solicitud">
-</div>
+
 {include 'footer.tpl'}
 
 

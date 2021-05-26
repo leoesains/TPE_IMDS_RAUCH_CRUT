@@ -49,4 +49,7 @@ Class View{
     public function showFormaDeEntrega($material) {
         echo "Detalle del material";
     }
+    public function showAvisos(){
+        echo "lista de avisos";
+    }
 }

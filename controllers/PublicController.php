@@ -7,13 +7,16 @@ class PublicController{
 
     private $materialesModel; 
     private $view;
-    private $minRand = 1;
-    private $maxRand = 12;
-    private $maxKmPermitios = 6;
+    private $minRand;
+    private $maxRand;
+    private $maxKmPermitidos;
 
     public function __construct() {
         $this->materialesModel = new MaterialesModel();
         $this->view = new View;
+        $this->minRand = 1;
+        $this->minRand = 12;
+        $this->maxKmPermitidos = 6;
     }  
 
     public function showHome(){
@@ -66,7 +69,7 @@ class PublicController{
             header('location:'.BASE_URL.'avisos');
         }
         else if(verificarDistancia() == false) {
-            $this->errorview->showError('La distancia de su domicilio a la planta supera los '.$maxKmPermitios.'Km permitidos');
+            $this->errorview->showError('La distancia de su domicilio a la planta supera los '.$this->$maxKmPermitios.'Km permitidos');
         }
         else{
             $this->errorview->showError('Existen uno o mas campos obligatorios vacios');
@@ -75,9 +78,9 @@ class PublicController{
 
     public function verificarDistancia(){
         
-        $num = rand($minRand ,$maxRand);
+        $num = rand($this->$minRand ,$this->$maxRand);
 
-        if($num > $maxKmPermitios){
+        if($num > $this->$maxKmPermitios){
             return false;
         }else{
             return true;

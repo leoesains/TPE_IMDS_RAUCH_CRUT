@@ -44,6 +44,10 @@
                     $controller = new PublicController;
                     $controller -> showFormAviso();
                 }
+                if($parametros[1] == "add"){
+                    $controller = new PublicController;
+                    $controller = addAviso();
+                }
             }
         break;
 

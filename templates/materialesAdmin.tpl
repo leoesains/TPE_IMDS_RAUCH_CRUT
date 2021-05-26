@@ -26,4 +26,4 @@
     </button>
 
 </div>
-{include 'footerHome.tpl'}
+{include 'footerAdmin.tpl'}

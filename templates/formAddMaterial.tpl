@@ -17,4 +17,4 @@
   </form>
 </div>
 
-{include 'footer.tpl'}
+{include 'footerAdmin.tpl'}

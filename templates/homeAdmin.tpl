@@ -5,4 +5,4 @@
     <a href="admin/materiales/"><button class="redondo listado_materiales"></button></a>
 </div>
 
-{include 'footer.tpl'}
+{include 'footerAdmin.tpl'}

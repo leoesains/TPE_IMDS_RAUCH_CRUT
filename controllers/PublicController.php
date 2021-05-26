@@ -42,7 +42,7 @@ class PublicController{
     }
 
     public function showFormAviso(){
-        echo("Formulario de carga de aviso");
+        $this->view->viewFormAviso();
     }
 
     public function showError(){

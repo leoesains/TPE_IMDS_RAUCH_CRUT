@@ -87,5 +87,9 @@ class PublicController{
             return true;
         }
     }
+
+    public function showAvisos() {
+        $this->view->showAvisos();
+    }
 }
 

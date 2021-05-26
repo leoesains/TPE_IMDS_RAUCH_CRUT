@@ -6,4 +6,4 @@
     <a href="avisos"><button class="redondo lista"></button></a>
 </div>
 
-{include 'footer.tpl'}
+{include 'footerHome.tpl'}

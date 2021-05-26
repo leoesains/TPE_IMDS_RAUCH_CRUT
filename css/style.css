@@ -6,7 +6,6 @@ body{
     padding-top: 10px;
     width: 100%;
 }
-
 #header{
     height: 200px;
     background-color: #324C7C;
@@ -25,7 +24,6 @@ footer{
 .redesSoc{
     padding: 20px;
     width: 200px;
-    
 }
 .logo-principal{
     width: 500px;
@@ -38,7 +36,10 @@ footer{
     flex-direction: column;
     align-items: center;
 }
-
+.recuadroFooter a{
+    text-decoration: none;
+    color: #6d8fce;
+}
 .redondo{
     background-repeat: no-repeat;
     background-position: center;
@@ -65,25 +66,24 @@ footer{
     background-image: url(listado_de_materiales.png);
     margin-left: 550px;
 }
-
 .recuadroError{
     padding: 10px;
     background-color:#A8CF45;
     font-size: 20px;
     color: #324C7C;
 }
-
 .btn-volver{
-    background-color: #324C7C;
-    font-size: 20px;
-    
+    background-color: #399917;
+    font-size: 15px;
+    border-radius: 20%;
+    padding: 5px;
+    margin-top: 10px;
 }
-
 .btn-volver a {
     text-decoration: none;
     color: white;
+    
 }
-
 .circulo_requerimientos{
     width: 15rem;
 	height: 15rem;
@@ -108,13 +108,11 @@ footer{
     display: flex;
     justify-content: center;
 }
-
 .formInputsAviso {
     display: flex;
     flex-direction: column;
     width: 35%;
 }
-
 .formInputsAviso .input {
     margin-bottom: 1rem;
     font-size: 1rem;
@@ -122,13 +120,26 @@ footer{
     border: 3px solid #399917;
     border-radius: 8px;
 }
-
 .titleAvisoDeRetito {
     text-align: center;
     color: #399917;
 }
-
 .btnSolicitud {
     display: flex;
     justify-content: center;
 }
+.notFound .redondo{
+    width: 300px;
+    height: 300px;
+    font-size: xx-large;
+    color: #324C7C;
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+}
+.notFound{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

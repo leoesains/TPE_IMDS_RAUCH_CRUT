@@ -36,7 +36,14 @@ footer{
     color: #324C7C;
 }
 
-.btn-volver {
-    color: #324C7C;
+.btn-volver{
+    background-color: #324C7C;
     font-size: 20px;
+    
 }
+
+.btn-volver a {
+    text-decoration: none;
+    color: white;
+}
+

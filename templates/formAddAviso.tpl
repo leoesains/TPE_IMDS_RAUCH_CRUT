@@ -1,7 +1,7 @@
 {include 'header.tpl'}
 <h1 class="titleAvisoDeRetito" >AVISO DE RETIRO</h1>
 <div class="contFormAviso">
-  <form class="formInputsAviso" action="{$base_url}/avisos/add" method="POST">
+  <form class="formInputsAviso" action="avisos/add" method="POST" enctype="multipart/form-data">
     <!--Nombre-->
     <input type="text" class="input" name="nombre" placeholder="Nombre" autocomplete="off">
     <!--Apellido-->

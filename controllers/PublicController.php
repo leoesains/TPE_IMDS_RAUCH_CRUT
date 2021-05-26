@@ -1,6 +1,7 @@
 <?php
 
-require_once 'models/materiales.model.php'; 
+require_once 'models/aviso.model.php';
+require_once 'models/materiales.model.php';
 require_once 'views/View.php';
 
 class PublicController{
@@ -13,6 +14,7 @@ class PublicController{
 
     public function __construct() {
         $this->materialesModel = new MaterialesModel();
+        $this->avisoModel = new avisoModel();
         $this->view = new View;
         $this->minRand = 1;
         $this->minRand = 12;
@@ -63,17 +65,16 @@ class PublicController{
         $imagen=$_FILES['input_name']['tmp_name'];
         $nombre_imagen=$_FILES['input_name']['name'];
 
-        if(!empty($nombre) && !empty($apellido) && !empty($direccion) && !empty($telefono)&& !empty($email) && !empty($franja_horaria) && !empty($volumen)
-        && $this->verificarDistancia() == true){
-            $this->model->insert($nombre,$apellido,$direccion,$telefono,$email,$franja_horaria,$volumen,$imagen,$nombre_imagen);
-            header('location:'.BASE_URL.'avisos');
-            $this->errorview->showError('El aviso fue cargado exitosamente');
-        }
-        else if($this->verificarDistancia() == false) {
-            $this->errorview->showError('La distancia de su domicilio a la planta supera los '.$this->maxKmPermitios.'Km permitidos');
+        if(!empty($nombre) && !empty($apellido) && !empty($direccion) && !empty($telefono)&& !empty($email) && !empty($franja_horaria) && !empty($volumen)){
+            if($this->verificarDistancia() == true) {
+                $this->avisoModel->insert($nombre,$apellido,$direccion,$telefono,$email,$franja_horaria,$volumen,$imagen,$nombre_imagen);
+                $this->view->viewError('El aviso fue cargado exitosamente');
+            }else{
+                $this->view->viewError('La distancia de su domicilio a la planta supera los '.$this->maxKmPermitidos.'Km permitidos');
+            }
         }
         else{
-            $this->errorview->showError('Existen uno o mas campos obligatorios vacios');
+            $this->view->viewError('Existen uno o mas campos obligatorios vacios');
         }
     }
 
@@ -81,7 +82,7 @@ class PublicController{
         
         $num = rand($this->minRand ,$this->maxRand);
 
-        if($num > $this->maxKmPermitios){
+        if($num > $this->maxKmPermitidos){
             return false;
         }else{
             return true;

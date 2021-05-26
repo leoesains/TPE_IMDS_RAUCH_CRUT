@@ -20,8 +20,8 @@ class AdminController{
     }
 
     public function showMateriales(){
-        $material = "";
-        $this->view->showMateriales($material);
+        $materiales = $this->materialesModel->getAll(); // Retorna un arreglo de clave-valor, se recorre como en la línea 37
+        $this->view->showMaterialesAdmin($materiales); 
     }
 
     public function showFormMaterial(){

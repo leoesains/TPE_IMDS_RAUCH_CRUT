@@ -60,10 +60,13 @@ Class View{
     }
     
     public function showMateriales($materiales){
-        echo "Lista de materiales - Área de administración";
+        echo "Lista de materiales";
     }
 
-    
+    public function showMaterialesAdmin($materiales){
+        echo "Lista de materiales -  Área administración";
+    }
+
     public function showAvisos(){
         echo "lista de avisos";
     }

@@ -45,6 +45,7 @@ class AdminController{
             $success = $this->materialesModel->insertMaterial($nombre, $formaDeEntrega);
             if ($success){
                 $this->view->showMateriales($materiales);
+                header('location:'.BASE_URL.'admin/materiales');
             }
             else{
                 $this->view->viewError("Este material no pudo ser cargado");

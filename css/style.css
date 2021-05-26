@@ -81,8 +81,7 @@ footer{
 }
 .btn-volver a {
     text-decoration: none;
-    color: white;
-    
+    color: white
 }
 .circulo_requerimientos{
     width: 15rem;
@@ -141,5 +140,45 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.tablaMateriales{
+    background-color:#A8CF45; 
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.table {
+    border: #324C7C 2px solid;
+    background-color:#A8CF45;
+    color:#324C7C;
+    padding: 5px;
+    border-collapse: collapse;
+}
+th {
+    border: #324C7C 2px solid;
+    padding: 4px;
+    
+}
+td {
+    border: #324C7C 1px solid;
+    padding: 4px;
+}
+
+
+.btn-agregar{
+    background-color: #324C7C;
+    font-size: 15px;
+    border-radius: 20%;
+    padding: 5px;
+    margin-top: 5px;
+}
+.btn-agregar a {
+    text-decoration: none;
+    color: white
 }
 

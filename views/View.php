@@ -39,4 +39,8 @@ Class View{
         echo 'formulario aviso de retiro';
     }
 
+    public function showMateriales($materiales){
+        echo "Lista de materiales - Área de administración"
+    }
+
 }

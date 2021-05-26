@@ -28,3 +28,22 @@ footer{
     flex-direction: column;
     align-items: center;
 }
+
+.recuadroError{
+    padding: 10px;
+    background-color:#A8CF45;
+    font-size: 20px;
+    color: #324C7C;
+}
+
+.btn-volver{
+    background-color: #324C7C;
+    font-size: 20px;
+    
+}
+
+.btn-volver a {
+    text-decoration: none;
+    color: white;
+}
+

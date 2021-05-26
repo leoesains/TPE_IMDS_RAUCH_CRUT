@@ -22,4 +22,10 @@ Class View{
         $this->getSmarty()->display('home.tpl');
     }
 
+    //DEFAULT -> ERROR 404
+    public function viewError($msj = null){
+        $this->getSmarty()->assign("error", $msj);
+        $this->getSmarty()->display('error.tpl');
+    }
+
 }

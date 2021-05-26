@@ -20,6 +20,15 @@ Class View{
         $this->getSmarty()->assign('title', 'C.R.U.T.');
 
         $this->getSmarty()->display('home.tpl');
+        
+       
+    }
+
+    public function showHomeAdmin(){
+
+        $this->getSmarty()->assign('title', 'C.R.U.T.');
+
+        $this->getSmarty()->display('homeAdmin.tpl');
     }
 
     
@@ -28,6 +37,14 @@ Class View{
         $this->getSmarty()->assign('title', 'C.R.U.T.');
         $this->getSmarty()->display('formAddMaterial.tpl');
     }
+
+    //Muestra los requerimientos recibidos como parámetro
+    public function showFormaDeEntrega($requerimiento) {
+        $this->getSmarty()->assign('requerimiento', $requerimiento);
+        $this->getSmarty()->display('showRequerimiento.tpl');
+    }
+
+
     
     
     //DEFAULT -> ERROR 404
@@ -46,9 +63,7 @@ Class View{
         echo "Lista de materiales - Área de administración";
     }
 
-    public function showFormaDeEntrega($material) {
-        echo "Detalle del material";
-    }
+    
     public function showAvisos(){
         echo "lista de avisos";
     }

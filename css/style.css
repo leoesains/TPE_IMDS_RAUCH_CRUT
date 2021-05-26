@@ -49,14 +49,23 @@ footer{
     border-radius: 50%;
     margin-top: 40px;
 }
-.aviso{
+.aviso_retiro{
     background-image: url(aviso_de_retiro.png);
     margin-left: 400px;
 }
-.lista{
+.lista_materiales{
     background-image: url(lista_de_materiales.png);
     margin-left: 150px;
 }
+.lista_cartonero{
+    background-image: url(listado_cartoneros.png);
+    margin-left: 400px;
+}
+.listado_materiales{
+    background-image: url(listado_de_materiales.png);
+    margin-left: 550px;
+}
+
 .recuadroError{
     padding: 10px;
     background-color:#A8CF45;
@@ -75,6 +84,26 @@ footer{
     color: white;
 }
 
+.circulo_requerimientos{
+    width: 15rem;
+	height: 15rem;
+    border: solid 4px #399917;
+	border-radius: 50%;
+	background: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+    margin:0px auto;
+    margin-top: 20px;
+    padding:3%
+}
+.circulo_requerimeintos > h2 {
+	font-family: sans-serif;
+	color: white;
+	font-size: 1.4rem;
+	font-weight: bold;
+}
 .contFormAviso {
     display: flex;
     justify-content: center;

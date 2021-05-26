@@ -35,11 +35,11 @@ class PublicController{
 
     public function showMaterial($id_material){
         //Pido a la BD la forma de entrega del material con el id que recibo por parámetros
-        $material= $this->materialesModel->getMaterialById($id_material);
+        $requerimiento= $this->materialesModel->getRequerimiento($id_material);
 
         //Mando el resultado a la vista
-        if($material){
-            $this->view->showFormaDeEntrega($material); //-->VER NOMBRE DE LA FUNCIÓN
+        if(!empty($requerimiento)){
+            $this->view->showFormaDeEntrega($requerimiento); 
         }
         else {
             $this->view->viewError("El material no existe");

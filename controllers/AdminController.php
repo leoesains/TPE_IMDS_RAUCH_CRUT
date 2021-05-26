@@ -16,7 +16,7 @@ class AdminController{
     }  
 
     public function showAdmin(){
-        echo("Home de admin");
+        $this->view->showHomeAdmin();
     }
 
     public function showMateriales(){

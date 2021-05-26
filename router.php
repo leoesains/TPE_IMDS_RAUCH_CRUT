@@ -48,6 +48,10 @@
                     $controller = new PublicController;
                     $controller->addAviso();
                 }
+                else{
+                    $controller = new PublicController;
+                    $controller->showError();
+                }
             }
         break;
 
@@ -76,6 +80,10 @@
                             $controller->showError();
                         }
                     }
+                }
+                else{
+                    $controller = new PublicController;
+                    $controller->showError();
                 }
             }
                                

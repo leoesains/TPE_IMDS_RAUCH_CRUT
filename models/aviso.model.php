@@ -18,7 +18,7 @@ class AvisoModel extends dbConectionModel {
     }
 
     private function uploadImage($imagen, $nombre_imagen){
-        $target = 'uploads/images/' . uniqid("", true) . "." . strtolower(pathinfo($nameImg, PATHINFO_EXTENSION));
+        $target = 'uploads/images/' . uniqid("", true) . "." . strtolower(pathinfo($nombre_imagen, PATHINFO_EXTENSION));
         move_uploaded_file($imagen, $target);
         return $target;
     }

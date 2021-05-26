@@ -25,6 +25,7 @@ Class View{
     
     //Muestra formulario para agregar nuevo material
     public function showFormMaterial(){
+        $this->getSmarty()->assign('title', 'C.R.U.T.');
         $this->getSmarty()->display('formAddMaterial.tpl');
     }
     
@@ -40,7 +41,7 @@ Class View{
     }
 
     public function showMateriales($materiales){
-        echo "Lista de materiales - Área de administración"
+        echo "Lista de materiales - Área de administración";
     }
 
 }

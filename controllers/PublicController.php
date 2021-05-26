@@ -1,17 +1,17 @@
 <?php
 
-//require_once 'models/materialesModel.php'; 
+require_once 'models/materiales.model.php'; 
 require_once 'views/View.php';
 
 class PublicController{
 
-    //private $materialesModel; 
+    private $materialesModel; 
     private $view;
 
     public function __construct() {
-       // $this->materialesModel = new MaterialesMode();
+        $this->materialesModel = new MaterialesModel();
         $this->view = new View;
-    }   //---> Descomentar cuando el materialesModel esté creado 
+    }  
 
     public function showHome(){
         $this->view->showHome();
@@ -27,7 +27,7 @@ class PublicController{
 
     public function showMaterial($idMaterial){
         //Pido a la BD la forma de entrega del material con el id que recibo por parámetros
-        $material= $this->materialesModel->get($id_material);
+        $material= $this->materialesModel->getRequerimiento($id_material);
 
         //Mando el resultado a la vista
         if(!empty($material)){

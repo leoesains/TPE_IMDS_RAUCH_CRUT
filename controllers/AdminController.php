@@ -20,7 +20,8 @@ class AdminController{
     }
 
     public function showMateriales(){
-        $this->view->showMateriales();
+        $material = "";
+        $this->view->showMateriales($material);
     }
 
     public function showFormMaterial(){

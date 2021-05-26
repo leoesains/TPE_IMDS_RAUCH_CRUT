@@ -1,6 +1,16 @@
 <?php
 
+require_once 'views/View.php';
+
 class AdminController{
+
+    private $view;
+
+    public function __construct() {
+        $this->view = new View;
+    }  
+
+
     public function showAdmin(){
         echo("Home de admin");
     }
@@ -10,7 +20,7 @@ class AdminController{
     }
 
     public function showFormMaterial(){
-        echo("Formulario de carga de un material");
+        $this->view->showFormMaterial();
     }
 
     public function addMaterial(){

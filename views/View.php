@@ -22,10 +22,16 @@ Class View{
         $this->getSmarty()->display('home.tpl');
     }
 
+    //Muestra formulario para agregar nuevo material
+    public function showFormMaterial(){
+        $this->getSmarty()->display('formAddMaterial.tpl');
+    }
+
     //DEFAULT -> ERROR 404
     public function viewError($msj = null){
         $this->getSmarty()->assign("error", $msj);
         $this->getSmarty()->display('error.tpl');
     }
+
 
 }

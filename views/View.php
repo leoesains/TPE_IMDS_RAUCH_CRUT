@@ -60,7 +60,9 @@ Class View{
     }
     
     public function showMateriales($materiales){
-        echo "Lista de materiales";
+        $this->getSmarty()->assign('title', 'C.R.U.T.');
+        $this->getSmarty()->assign('materiales',$materiales );
+        $this->getSmarty()->display('showMateriales.tpl');
     }
 
     public function showMaterialesAdmin($materiales){

@@ -75,3 +75,31 @@ footer{
     color: white;
 }
 
+.contFormAviso {
+    display: flex;
+    justify-content: center;
+}
+
+.formInputsAviso {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+}
+
+.formInputsAviso .input {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    background-color: #ffffff8c;
+    border: 3px solid #399917;
+    border-radius: 8px;
+}
+
+.titleAvisoDeRetito {
+    text-align: center;
+    color: #399917;
+}
+
+.btnSolicitud {
+    display: flex;
+    justify-content: center;
+}

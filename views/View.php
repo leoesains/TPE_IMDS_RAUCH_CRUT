@@ -33,5 +33,9 @@ Class View{
         $this->getSmarty()->display('error.tpl');
     }
 
-
+    //Muestra formulario para cargar un aviso de retiro
+    public function showFormAviso(){
+        $this->getSmarty()->assign('title', 'C.R.U.T.');
+        $this->getSmarty()->display('formAddAviso.tpl');
+    }
 }

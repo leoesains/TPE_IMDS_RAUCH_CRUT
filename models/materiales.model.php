@@ -14,9 +14,9 @@ class MaterialesModel extends dbConectionModel {
         return $materiales;
     }
       //obtengo un requerimiento_de_recibo del material pasado por parametro
-      public function getRequerimiento($id_material) {
+      public function getMaterialById($id_material) {
         //Enviamos la consulta
-        $sql = "SELECT requerimiento_de_recibo FROM material WHERE id_material = ?";
+        $sql = "SELECT * FROM material WHERE id_material = ?";
         $query = $this->getConnection()->prepare($sql);    //Preparo la sentencia sql para hacer la consulta
         $query->execute([$id_material]);        //La ejecuto
         $material = $query->fetch(PDO::FETCH_OBJ);    

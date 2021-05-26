@@ -44,4 +44,8 @@ Class View{
         echo "Lista de materiales - Área de administración";
     }
 
+    public function showFormaDeEntrega($material) {
+        echo "Detalle del material";
+    }
+
 }

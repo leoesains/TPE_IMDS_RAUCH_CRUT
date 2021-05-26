@@ -34,7 +34,7 @@ class PublicController{
             $this->view->showFormaDeEntrega(); //-->VER NOMBRE DE LA FUNCIÓN
         }
         else {
-            $this->view->showError("El material al que intenta acceder no existe");
+            $this->view->showError();
         }
     }
 
@@ -42,8 +42,8 @@ class PublicController{
         echo("Formulario de carga de aviso");
     }
 
-    public function showError($error){
-        echo($error);
+    public function showError(){
+        $this->view->viewError("Error 404!");
     }
 
 }

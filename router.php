@@ -69,7 +69,7 @@
                         }
                         else{
                             $controller = new PublicController;
-                            $controller->showError("Error 404 - Página no encontrada");
+                            $controller->showError();
                         }
                     }
                 }
@@ -79,7 +79,7 @@
 
         default :
             $controller = new PublicController;
-            $controller->showError("Error 404 - Página no encontrada");
+            $controller->showError();
         break;
     }
 

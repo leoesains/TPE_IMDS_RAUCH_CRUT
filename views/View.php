@@ -60,10 +60,15 @@ Class View{
     }
     
     public function showMateriales($materiales){
-        echo "Lista de materiales - Área de administración";
+        echo "Lista de materiales";
     }
 
-    
+    public function showMaterialesAdmin($materiales){
+        $this->getSmarty()->assign('title', 'C.R.U.T.');
+        $this->getSmarty()->assign('materiales',$materiales );
+        $this->getSmarty()->display('materialesAdmin.tpl');
+    }
+
     public function showAvisos(){
         echo "lista de avisos";
     }

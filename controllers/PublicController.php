@@ -35,7 +35,7 @@ class PublicController{
 
     public function showMaterial($id_material){
         //Pido a la BD la forma de entrega del material con el id que recibo por parámetros
-        $requerimiento= $this->materialesModel->getRequerimiento($id_material);
+        $requerimiento= $this->materialesModel->getMaterialById($id_material);
 
         //Mando el resultado a la vista
         if(!empty($requerimiento)){

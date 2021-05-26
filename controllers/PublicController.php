@@ -7,13 +7,16 @@ class PublicController{
 
     private $materialesModel; 
     private $view;
-    private $minRand = 1;
-    private $maxRand = 12;
-    private $maxKmPermitios = 6;
+    private $minRand;
+    private $maxRand;
+    private $maxKmPermitidos;
 
     public function __construct() {
         $this->materialesModel = new MaterialesModel();
         $this->view = new View;
+        $this->minRand = 1;
+        $this->minRand = 12;
+        $this->maxKmPermitidos = 6;
     }  
 
     public function showHome(){
@@ -25,10 +28,10 @@ class PublicController{
         $materiales = $this->materialesModel->getAll(); //--> función que trae todos los materiales
 
         //Envío la lista de los materiales recibidos a la vista
-        $this->view->showListaMateriales($materiales);
+        $this->view->showMateriales($materiales);
     }
 
-    public function showMaterial($idMaterial){
+    public function showMaterial($id_material){
         //Pido a la BD la forma de entrega del material con el id que recibo por parámetros
         $requerimiento= $this->materialesModel->getRequerimiento($id_material);
 
@@ -37,12 +40,12 @@ class PublicController{
             $this->view->showFormaDeEntrega($requerimiento); 
         }
         else {
-            $this->view->showError();
+            $this->view->viewError("El material no existe");
         }
     }
 
     public function showFormAviso(){
-        echo("Formulario de carga de aviso");
+        $this->view->showFormAviso();
     }
 
     public function showError(){
@@ -61,12 +64,13 @@ class PublicController{
         $nombre_imagen=$_FILES['input_name']['name'];
 
         if(!empty($nombre) && !empty($apellido) && !empty($direccion) && !empty($telefono)&& !empty($email) && !empty($franja_horaria) && !empty($volumen)
-        && verificarDistancia() == true){
+        && $this->verificarDistancia() == true){
             $this->model->insert($nombre,$apellido,$direccion,$telefono,$email,$franja_horaria,$volumen,$imagen,$nombre_imagen);
             header('location:'.BASE_URL.'avisos');
+            $this->errorview->showError('El aviso fue cargado exitosamente');
         }
-        else if(verificarDistancia() == false) {
-            $this->errorview->showError('La distancia de su domicilio a la planta supera los '.$maxKmPermitios.'Km permitidos');
+        else if($this->verificarDistancia() == false) {
+            $this->errorview->showError('La distancia de su domicilio a la planta supera los '.$this->maxKmPermitios.'Km permitidos');
         }
         else{
             $this->errorview->showError('Existen uno o mas campos obligatorios vacios');
@@ -75,9 +79,9 @@ class PublicController{
 
     public function verificarDistancia(){
         
-        $num = rand($minRand ,$maxRand);
+        $num = rand($this->minRand ,$this->maxRand);
 
-        if($num > $maxKmPermitios){
+        if($num > $this->maxKmPermitios){
             return false;
         }else{
             return true;

@@ -31,8 +31,10 @@ Class View{
         $this->getSmarty()->display('homeAdmin.tpl');
     }
 
+    
     //Muestra formulario para agregar nuevo material
     public function showFormMaterial(){
+        $this->getSmarty()->assign('title', 'C.R.U.T.');
         $this->getSmarty()->display('formAddMaterial.tpl');
     }
 
@@ -43,11 +45,26 @@ Class View{
     }
 
 
+    
+    
     //DEFAULT -> ERROR 404
     public function viewError($msj = null){
         $this->getSmarty()->assign("error", $msj);
         $this->getSmarty()->display('error.tpl');
     }
 
+    //Muestra formulario para cargar un aviso de retiro
+    public function showFormAviso(){
+        $this->getSmarty()->assign('title', 'C.R.U.T.');
+        $this->getSmarty()->display('formAddAviso.tpl');
+    }
+    
+    public function showMateriales($materiales){
+        echo "Lista de materiales - Área de administración";
+    }
 
+    
+    public function showAvisos(){
+        echo "lista de avisos";
+    }
 }

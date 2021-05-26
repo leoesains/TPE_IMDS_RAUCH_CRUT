@@ -14,9 +14,9 @@ class MaterialesModel extends dbConectionModel {
         return $materiales;
     }
       //obtengo un requerimiento_de_recibo del material pasado por parametro
-      public function getRequerimiento($id_material) {
+      public function getMaterialById($id_material) {
         //Enviamos la consulta
-        $sql = "SELECT requerimiento_de_recibo FROM material WHERE id_material = ?";
+        $sql = "SELECT * FROM material WHERE id_material = ?";
         $query = $this->getConnection()->prepare($sql);    //Preparo la sentencia sql para hacer la consulta
         $query->execute([$id_material]);        //La ejecuto
         $material = $query->fetch(PDO::FETCH_OBJ);    
@@ -32,11 +32,13 @@ class MaterialesModel extends dbConectionModel {
         $materiales = $query->fetchAll(PDO::FETCH_OBJ);    //Guardo todos los materiales en $materiales (arreglo)
         return $materiales;
     }
+    
     //ingresa un nuevo material a la BBDD
     function insertMaterial($nombre_material, $requerimientos) {
         //enviamos la consulta
         $sql = "INSERT INTO material(nombre, requerimiento_de_recibo) VALUES (?, ?)";
         $query = $this->getConnection()->prepare($sql);  
-        $query->execute([$nombre_material, $requerimientos]);        
+        $result = $query->execute([$nombre_material, $requerimientos]);   
+        return $result;     
     }
 }

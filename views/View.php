@@ -40,6 +40,7 @@ Class View{
 
     //Muestra los requerimientos recibidos como parámetro
     public function showFormaDeEntrega($requerimiento) {
+        $this->getSmarty()->assign('title', 'C.R.U.T.');
         $this->getSmarty()->assign('requerimiento', $requerimiento);
         $this->getSmarty()->display('showRequerimiento.tpl');
     }

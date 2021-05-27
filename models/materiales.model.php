@@ -34,11 +34,22 @@ class MaterialesModel extends dbConectionModel {
     }
     
     //ingresa un nuevo material a la BBDD
-    function insertMaterial($nombre_material, $requerimientos, $imagen) {
+    function insertMaterial($nombre_material, $requerimientos, $imagen, $nombre_imagen) {
+        $pathImg= null;
+        if ($imagen){
+            $pathImg= $this->uploadImage($imagen, $nombre_imagen);
+        }
         //enviamos la consulta
         $sql = "INSERT INTO material(nombre, requerimiento_de_recibo, img) VALUES (?, ?, ?)";
         $query = $this->getConnection()->prepare($sql);  
-        $result = $query->execute([$nombre_material, $requerimientos, $imagen]);   
+        $result = $query->execute([$nombre_material, $requerimientos, $pathImg]);   
         return $result;     
+    }
+
+    //Función de redirección de imagenes
+    private function uploadImage($imagen, $nombre){
+        $target= 'uploads/images/' . uniqid("", true) . "." . strtolower(pathinfo($nombre, PATHINFO_EXTENSION));
+        move_uploaded_file($imagen, $target);
+        return $target;
     }
 }

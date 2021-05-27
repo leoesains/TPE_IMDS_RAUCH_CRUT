@@ -50,6 +50,7 @@ Class View{
     
     //DEFAULT -> ERROR 404
     public function viewError($msj = null){
+        $this->getSmarty()->assign('title', 'C.R.U.T.');
         $this->getSmarty()->assign("error", $msj);
         $this->getSmarty()->display('error.tpl');
     }

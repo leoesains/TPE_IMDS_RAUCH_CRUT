@@ -9,20 +9,20 @@
       </thead>
       <tbody>
       {foreach from=$materiales item=material}   
-        <tr >
-        <td>
-        {$material->nombre}
-        </td>
-        <td>
-        {$material->requerimiento_de_recibo}
-        </td>
-        </tr>
+          <tr >
+            <td>
+              {$material->nombre}
+            </td>
+            <td>
+              {$material->requerimiento_de_recibo}
+            </td>
+          </tr>
         {/foreach}
       </tbody>
     </table>
 
     <button class="btn-agregar">
-    <a href="admin/materiales/formAgregar">Agregar Material</a>
+      <a href="admin/materiales/formAgregar">Agregar Material</a>
     </button>
 
 </div>

@@ -143,18 +143,17 @@ footer{
 }
 
 .tablaMateriales{
-    background-color:#A8CF45; 
     padding: 10px;
-    margin: 10px;
+    margin: 20px;
     display: flex;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
 }
-
 .table {
+    padding: 5px;
+    margin: 10px;
     border: #324C7C 2px solid;
-    background-color:#A8CF45;
     color:#324C7C;
     padding: 5px;
     border-collapse: collapse;
@@ -162,19 +161,19 @@ footer{
 th {
     border: #324C7C 2px solid;
     padding: 4px;
-    
+    background-color:#A8CF45;
 }
 td {
     border: #324C7C 1px solid;
     padding: 4px;
+    background-color: white;
 }
-
-
 .btn-agregar{
-    background-color: #324C7C;
+    margin-left: 20px;
+    background-color: #399917;
     font-size: 15px;
-    border-radius: 20%;
-    padding: 5px;
+    border-radius: 20px;
+    padding: 8px;
     margin-top: 5px;
 }
 .btn-agregar a {

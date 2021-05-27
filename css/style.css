@@ -154,17 +154,18 @@ footer{
 }
 .addMaterial form div {
     padding: 10px;
-    color: #324C7C;
+    color: white;
     font-weight: bold;
 }
 .addMaterial h1{
     color: #399917;
 }
-#formAddMat{
-    padding: 15px;
+#formAddMat input{
+    margin-left: 10px;
+    padding: 5px;
     border: solid 3px #399917;
     background-color: #ffffff8c;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 .tablaMateriales{
     padding: 10px;

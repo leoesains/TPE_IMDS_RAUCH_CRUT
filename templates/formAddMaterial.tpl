@@ -13,6 +13,11 @@
     <div class="form-group">
       Forma de entrega <input type="text" name="formaDeEntrega" id="formaEntrega" autocomplete="off">
     </div>
+
+    <div class="form-group">
+      Cargar imagen <input type="text" name="imagen" id="imagen" autocomplete="off">
+    </div>
+    
     <input type="submit" value="Cargar material">
   </form>
 </div>

@@ -182,3 +182,19 @@ td {
     color: white
 }
 
+.materiales_aceptados{
+    display: inline-block;
+}
+
+.carton{
+    background-image: url(carton.png);
+    margin-left: 400px;
+}
+.plastico{
+    background-image: url(plastico.png);
+    margin-left: 50px;
+}
+.lata{
+    background-image: url(lata.png);
+    margin-left: 50px;
+}

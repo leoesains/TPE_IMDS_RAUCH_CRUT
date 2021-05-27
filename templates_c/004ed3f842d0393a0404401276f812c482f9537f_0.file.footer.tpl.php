@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-05-26 13:27:20
+/* Smarty version 3.1.34-dev-7, created on 2021-05-27 02:10:42
   from 'C:\xampp\htdocs\proyectos\TPE_IMDS_RAUCH_CRUT\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_60ae3098e72639_81933391',
+  'unifunc' => 'content_60aee3829eb4d4_27058500',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60ae3098e72639_81933391 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60aee3829eb4d4_27058500 (Smarty_Internal_Template $_smarty_tpl) {
 ?>            <footer>
                 <div class="recuadroFooter">
                     <img src="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>

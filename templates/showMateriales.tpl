@@ -1,15 +1,17 @@
 {include 'header.tpl'}
 
-<p><b>MATERIALES</b></p>
-
+<div class="materiales_aceptados">
 {foreach from=$materiales item=material}   
-        <tr >
-        <td>
-        {$material->nombre}
-        </td>
-        
-        </tr>
+        {if {$material->nombre}=="Carton"} 
+                <a href="materiales/{$material->id_material}"><button class="redondo carton"></button></a>
+        {/if}
+        {if {$material->nombre}=="Plastico"} 
+                <a href="materiales/{$material->id_material}"><button class="redondo plastico"></button></a>
+        {/if}
+        {if {$material->nombre}=="Lata"} 
+                <a href="materiales/{$material->id_material}"><button class="redondo lata"></button></a>
+        {/if}
+        {*<a href="materiales/{$material->id_material}"><button class="redondo">{$material->nombre}</button></a>*}
 {/foreach}
-<h6><a class="btn btn-danger centrar btn_alta" href="home"><b>Volver</b></a></h6>
-
+</div>
 {include 'footer.tpl'}

@@ -49,6 +49,7 @@ footer{
     height: 150px ;
     border-radius: 50%;
     margin-top: 40px;
+    text-align: center;
 }
 .aviso_retiro{
     background-image: url(aviso_de_retiro.png);
@@ -75,8 +76,8 @@ footer{
 .btn-volver{
     background-color: #399917;
     font-size: 15px;
-    border-radius: 20%;
-    padding: 5px;
+    border-radius: 20px;
+    padding: 8px;
     margin-top: 10px;
 }
 .btn-volver a {
@@ -131,7 +132,7 @@ footer{
 .notFound .redondo{
     width: 300px;
     height: 300px;
-    font-size: xx-large;
+    font-size: 30px;
     color: #324C7C;
     display: flex;    
     align-items: center;

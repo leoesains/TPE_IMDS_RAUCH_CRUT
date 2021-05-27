@@ -11,6 +11,7 @@ class PublicController{
     private $minRand;
     private $maxRand;
     private $maxKmPermitidos;
+    private $maxPesoImg;
 
     public function __construct() {
         $this->materialesModel = new MaterialesModel();
@@ -19,6 +20,7 @@ class PublicController{
         $this->minRand = 1;
         $this->minRand = 12;
         $this->maxKmPermitidos = 6;
+        $this->maxPesoImg = 1100000; //Peso max en bytes.
     }  
 
     public function showHome(){
@@ -62,13 +64,19 @@ class PublicController{
         $email=$_POST['email'];
         $franja_horaria=$_POST['franja_horaria'];
         $volumen=$_POST['volumen'];
+        $peso=$_FILES ["input_name"] ["size"];//devuelve el valor en bytes
+        $extension=$_FILES ["input_name"] ["type"];
         $imagen=$_FILES['input_name']['tmp_name'];
         $nombre_imagen=$_FILES['input_name']['name'];
 
         if(!empty($nombre) && !empty($apellido) && !empty($direccion) && !empty($telefono)&& !empty($email) && !empty($franja_horaria) && !empty($volumen)){
             if($this->verificarDistancia() == true) {
-                $this->avisoModel->insert($nombre,$apellido,$direccion,$telefono,$email,$franja_horaria,$volumen,$imagen,$nombre_imagen);
-                $this->view->viewError('El aviso fue cargado exitosamente');
+                if(!empty($nombre_imagen) && $this->verificarImagen($peso, $extension) == false) {
+                    $this->view->viewError('La imagen debe pesar 1Mb como maximo y ser extension jpg o png');
+                }else {
+                    $this->avisoModel->insert($nombre,$apellido,$direccion,$telefono,$email,$franja_horaria,$volumen,$imagen,$nombre_imagen);
+                    $this->view->viewError('El aviso fue cargado exitosamente');
+                }
             }else{
                 $this->view->viewError('La distancia de su domicilio a la planta supera los '.$this->maxKmPermitidos.'Km permitidos');
             }
@@ -91,6 +99,15 @@ class PublicController{
 
     public function showAvisos() {
         $this->view->showAvisos();
+    }
+
+    public function verificarImagen($peso, $extension){
+        if( ($peso<=$this->maxPesoImg) && ($extension == "image/jpg" || 
+            $extension == "image/jpeg" || $extension == "image/png")){
+            return true;
+        } else{
+            return false;
+        }
     }
 }
 

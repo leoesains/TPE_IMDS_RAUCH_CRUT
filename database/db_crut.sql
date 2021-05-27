@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-05-2021 a las 14:30:32
--- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 8.0.6
+-- Tiempo de generación: 27-05-2021 a las 21:04:06
+-- Versión del servidor: 10.4.8-MariaDB
+-- Versión de PHP: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -35,7 +36,7 @@ CREATE TABLE `aviso_de_retiro` (
   `telefono` varchar(15) NOT NULL,
   `email` varchar(30) NOT NULL,
   `franja_horaria` varchar(15) NOT NULL,
-  `volumen` varchar(20) NOT NULL,
+  `volumen` varchar(60) NOT NULL,
   `fotografia` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

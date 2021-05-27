@@ -1,10 +1,10 @@
 {include 'header.tpl'}
 
-<div>
+<div class="addMaterial">
   
   <h1>Agregar nuevo material </h1>
 
-  <form action="admin/materiales/add" method="POST" enctype="multipart/form-data">
+  <form action="admin/materiales/add" method="POST" enctype="multipart/form-data" id="formAddMat">
 
     <div class="form-group">
       Nombre del material <input type="text" name="nombre" id="nuevoMaterial" autocomplete="off">

@@ -143,7 +143,29 @@ footer{
     flex-direction: column;
     align-items: center;
 }
-
+.addMaterial{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.addMaterial form{
+    margin-bottom: 20px;
+}
+.addMaterial form div {
+    padding: 10px;
+    color: #324C7C;
+    font-weight: bold;
+}
+.addMaterial h1{
+    color: #399917;
+}
+#formAddMat{
+    padding: 15px;
+    border: solid 3px #399917;
+    background-color: #ffffff8c;
+    border-radius: 20px;
+}
 .tablaMateriales{
     padding: 10px;
     margin: 20px;

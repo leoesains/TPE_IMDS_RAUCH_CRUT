@@ -6,5 +6,5 @@
     </div>
 </div>
 
-<button><a href="{$base_url}materiales"> Volver </a></button>
+<button class="btn-volver"><a href="{$base_url}materiales"> Volver </a></button>
 {include 'footer.tpl'}

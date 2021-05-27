@@ -20,6 +20,9 @@
     
     <input type="submit" value="Cargar material">
   </form>
+  <button class="btn-agregar">
+    <a href="admin/materiales">Cancelar</a>
+  </button
 </div>
 
 {include 'footerAdmin.tpl'}

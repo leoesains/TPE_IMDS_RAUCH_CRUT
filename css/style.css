@@ -113,8 +113,9 @@ footer{
     width: 35%;
 }
 .formInputsAviso .input {
+    padding: 3px;
     margin-bottom: 1rem;
-    font-size: 1rem;
+    font-size: 16px;
     background-color: #ffffff8c;
     border: 3px solid #399917;
     border-radius: 8px;
@@ -171,6 +172,7 @@ td {
 .btn-agregar{
     margin-left: 20px;
     background-color: #399917;
+    color: white;
     font-size: 15px;
     border-radius: 20px;
     padding: 8px;

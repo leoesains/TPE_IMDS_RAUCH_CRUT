@@ -34,11 +34,11 @@ class MaterialesModel extends dbConectionModel {
     }
     
     //ingresa un nuevo material a la BBDD
-    function insertMaterial($nombre_material, $requerimientos) {
+    function insertMaterial($nombre_material, $requerimientos, $imagen) {
         //enviamos la consulta
-        $sql = "INSERT INTO material(nombre, requerimiento_de_recibo) VALUES (?, ?)";
+        $sql = "INSERT INTO material(nombre, requerimiento_de_recibo, img) VALUES (?, ?, ?)";
         $query = $this->getConnection()->prepare($sql);  
-        $result = $query->execute([$nombre_material, $requerimientos]);   
+        $result = $query->execute([$nombre_material, $requerimientos, $imagen]);   
         return $result;     
     }
 }

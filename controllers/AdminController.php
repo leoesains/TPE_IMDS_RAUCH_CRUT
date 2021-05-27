@@ -32,6 +32,7 @@ class AdminController{
 
         $nombre = $_POST['nombre'];
         $formaDeEntrega = $_POST['formaDeEntrega'];
+        $imagen = $_POST['imagen'];
 
         $materiales = $this->materialesModel->getAll();
         foreach ($materiales as $key => $material){
@@ -40,9 +41,9 @@ class AdminController{
                 die();
             }
         }
-        
-        if (!empty($nombre) && !empty($formaDeEntrega)){
-            $success = $this->materialesModel->insertMaterial($nombre, $formaDeEntrega);
+
+        if (!empty($nombre) && !empty($formaDeEntrega) && !empty($imagen)){
+            $success = $this->materialesModel->insertMaterial($nombre, $formaDeEntrega, $imagen);
             if ($success){
                 $this->view->showMateriales($materiales);
                 header('location:'.BASE_URL.'admin/materiales');

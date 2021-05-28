@@ -26,6 +26,7 @@
             <option value="Entra en la caja de una camioneta">Entra en la caja de una camioneta</option>
             <option value="Entra en un camión">Entra en un camión</option>
         </select>
+        <p>*Imágen opcional (hasta 1 Mb en formato PNG/JPG) </p>
         <!--Opcional: Foto .jpg y .png hasta 1 Mb-->
         <input type="file" name="input_name" >
         <div class="btnSolicitud">

@@ -129,6 +129,14 @@ footer{
 .formInputsAviso .btn-agregar {
     width: 120px;
 }
+.formInputsAviso p{
+    font-size: 12px;
+    width: 300px;
+    color: rgb(207, 206, 206);
+    background-color: #324C7C;
+    padding: 4px;
+    border-radius: 8px;
+}
 .btnSolicitud {
     display: flex;
     justify-content: center;

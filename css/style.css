@@ -51,6 +51,16 @@ footer{
     margin-top: 40px;
     text-align: center;
 }
+.btn_material{
+    background-color: white;
+    border: solid 4px #399917;
+    width: 110px;
+    height: 110px ;
+    border-radius: 50%;
+    margin-top: 40px;
+    margin-left: 50px;  
+}
+
 .aviso_retiro{
     background-image: url(aviso_de_retiro.png);
     margin-left: 400px;
@@ -93,16 +103,11 @@ footer{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	text-align: center;
+    text-align: center;
     margin:0px auto;
     margin-top: 20px;
-    padding:3%
-}
-.circulo_requerimeintos > h2 {
-	font-family: sans-serif;
-	color: white;
-	font-size: 1.4rem;
-	font-weight: bold;
+    padding:3%;
+    font-size: 1.3em;
 }
 .contFormAviso {
     display: flex;
@@ -220,7 +225,9 @@ td {
 }
 
 .materiales_aceptados{
-    display: inline-block;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .carton{
@@ -234,4 +241,9 @@ td {
 .lata{
     background-image: url(lata.png);
     margin-left: 50px;
+}
+.nombre_requerimiento{
+    font-size: 2em;
+    font-weight: bold;
+    color: #399917;
 }

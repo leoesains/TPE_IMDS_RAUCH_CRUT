@@ -2,7 +2,10 @@
 
 <div>
     <div class="circulo_requerimientos">
-        <h2>{$requerimiento->requerimiento_de_recibo}</h2>
+        <p>
+            <b class="nombre_requerimiento">{$requerimiento->nombre}</b>
+            <br> {$requerimiento->requerimiento_de_recibo}
+        </p>
     </div>
 </div>
 

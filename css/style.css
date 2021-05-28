@@ -63,11 +63,11 @@ footer{
 
 .aviso_retiro{
     background-image: url(aviso_de_retiro.png);
-    margin-left: 400px;
+    /*margin-left: 50px;*/
 }
 .lista_materiales{
     background-image: url(lista_de_materiales.png);
-    margin-left: 150px;
+    margin-left: 50px;
 }
 .lista_cartonero{
     background-image: url(listado_cartoneros.png);
@@ -75,7 +75,7 @@ footer{
 }
 .listado_materiales{
     background-image: url(listado_de_materiales.png);
-    margin-left: 550px;
+    /*margin-left: 550px;*/
 }
 .recuadroError{
     padding: 10px;

@@ -23,16 +23,6 @@ class MaterialesModel extends dbConectionModel {
         return $material;
     }
 
-    //Obtengo todos los id y nombres de los materiales
-    public function getMateriales() {
-        //Hacemos la consulta
-        $sql = "SELECT id_material, nombre FROM material";
-        $query = $this->getConnection()->prepare($sql);    //Preparo la sentencia sql para hacer la consulta
-        $query->execute();        //la ejecuto
-        $materiales = $query->fetchAll(PDO::FETCH_OBJ);    //Guardo todos los materiales en $materiales (arreglo)
-        return $materiales;
-    }
-    
     //ingresa un nuevo material a la BBDD
     function insertMaterial($nombre_material, $requerimientos, $imagen, $nombre_imagen) {
         $pathImg= null;

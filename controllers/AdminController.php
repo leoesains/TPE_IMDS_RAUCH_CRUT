@@ -10,11 +10,12 @@ class AdminController{
     private $view;
     private $materialesModel;
     private $avisosModel;
-
+    
     public function __construct() {
         $this->view = new View();
         $this->materialesModel = new MaterialesModel();
         $this->avisosModel = new AvisoModel();
+        
 
     }  
 
@@ -80,13 +81,21 @@ class AdminController{
 
         echo ("Llamar a la función de actualizar del modelo");
          
-
+    }
 
     public function showAvisosDeRetiro(){
        
         $avisos = $this->avisosModel->getAll();
        
         $this->view->showAvisos($avisos);
+    }
+
+    public function showPesaje(){
+
+        //$pesajes = $this->pesajeModel->getpesajeAll();
+        
+        $this->view->showPesaje();
+
     }
 
 }

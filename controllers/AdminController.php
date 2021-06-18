@@ -2,16 +2,19 @@
 
 require_once 'views/View.php';
 require_once 'models/materiales.model.php';
+require_once 'models/aviso.model.php';
 
 
 class AdminController{
 
     private $view;
     private $materialesModel;
+    private $avisosModel;
 
     public function __construct() {
         $this->view = new View();
         $this->materialesModel = new MaterialesModel();
+        $this->avisosModel = new AvisoModel();
 
     }  
 
@@ -57,8 +60,18 @@ class AdminController{
  
     }
 
+
+
+    public function showAvisosDeRetiro(){
+       
+        $avisos = $this->avisosModel->getAll();
+       
+        $this->view->showAvisos($avisos);
+    }
+
 }
 
+    
 
 
 ?>

@@ -22,4 +22,12 @@ class AvisoModel extends dbConectionModel {
         move_uploaded_file($imagen, $target);
         return $target;
     }
+
+    public function getAll() {
+        $sql = "SELECT * FROM aviso_de_retiro";
+        $query = $this->getConnection()->prepare($sql);    //Preparo la sentencia sql para hacer la consulta
+        $query->execute();        //la ejecuto
+        $avisos = $query->fetchAll(PDO::FETCH_OBJ);    //Guardo todos los materiales en $materiales (arreglo)
+        return $avisos;
+    }
 }

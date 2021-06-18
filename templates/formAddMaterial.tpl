@@ -22,7 +22,7 @@
   </form>
   <button class="btn-agregar">
     <a href="admin/materiales">Cancelar</a>
-  </button
+  </button>
 </div>
 
 {include 'footerAdmin.tpl'}

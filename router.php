@@ -60,6 +60,10 @@
                 $controller = new AdminController;
                 $controller -> showAdmin();
             }
+            else if ($parametros[1] == "listadoDeAvisos"){
+                $controller = new AdminController;
+                $controller -> showAvisosDeRetiro();
+            }
             else{
                 if ($parametros[1] == "materiales"){
                     if(empty($parametros[2])){

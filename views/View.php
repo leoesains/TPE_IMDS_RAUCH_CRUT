@@ -73,7 +73,8 @@ Class View{
         $this->getSmarty()->display('materialesAdmin.tpl');
     }
 
-    public function showAvisos(){
-        echo "lista de avisos";
+    public function showAvisos($avisos){
+        $this->getSmarty()->assign('title', 'C.R.U.T.');
+        $this->getSmarty()->display('avisosDeRetiro.tpl');
     }
 }

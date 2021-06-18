@@ -5,7 +5,9 @@ require_once 'models/db.conection.model.php';
 class AvisoModel extends dbConectionModel {
 
     //ingresa un nuevo aviso a la BBDD
-    public function insert($nombre, $apellido, $direccion, $telefono, $email, $franja_horaria, $volumen, $imagen,$nombre_imagen,$estado,$fecha_entrega) {
+    public function insert($nombre, $apellido, $direccion, $telefono, $email, $franja_horaria, $volumen, $imagen,$nombre_imagen) {
+        $estado="Pendiente";
+        $fecha_entrega= date("Y-m-d");
         $path_img = null;
         if($imagen){
             $path_img = $this->uploadImage($imagen, $nombre_imagen);

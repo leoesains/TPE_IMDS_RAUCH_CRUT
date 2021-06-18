@@ -76,4 +76,18 @@ Class View{
     public function showAvisos(){
         echo "lista de avisos";
     }
+
+    //Muestra mensaje para de confirmación del borrado
+    public function showEliminarMaterial($material){
+        $this->getSmarty()->assign('title', 'C.R.U.T.');
+        $this->getSmarty()->assign('material',$material);
+        $this->getSmarty()->display('showEliminarMaterial.tpl');
+    }
+
+    //Muestra formulario para actualizar datos
+    public function showActualizarMaterial($material){
+        $this->getSmarty()->assign('title', 'C.R.U.T.');
+        $this->getSmarty()->assign('material',$material);
+        $this->getSmarty()->display('showActualizarMaterial.tpl');
+    }
 }

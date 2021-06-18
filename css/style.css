@@ -247,3 +247,11 @@ td {
     font-weight: bold;
     color: #399917;
 }
+.eliminar_definitivamente{
+    font-size: 20px;
+    width: 700px;
+    color: rgb(207, 206, 206);
+    background-color: #324C7C;
+    padding: 4px;
+   
+}

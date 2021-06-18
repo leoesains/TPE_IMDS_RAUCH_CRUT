@@ -75,6 +75,22 @@
                             $controller = new AdminController;
                             $controller -> addMaterial();
                         }
+                        else if ($parametros[2] == "eliminar"){
+                            $controller = new AdminController;
+                            $controller -> showEliminarMaterial($parametros[3]);
+                        }
+                        else if ($parametros[2] == "del"){
+                            $controller = new AdminController;
+                            $controller -> delMaterial($parametros[3]);
+                        }
+                        else if ($parametros[2] == "actualizar"){
+                            $controller = new AdminController;
+                            $controller -> showActualizarMaterial($parametros[3]);
+                        }
+                        else if ($parametros[2] == "upd"){
+                            $controller = new AdminController;
+                            $controller -> uptMaterial($parametros[3]);
+                        }
                         else{
                             $controller = new PublicController;
                             $controller->showError();

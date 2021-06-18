@@ -57,6 +57,28 @@ class AdminController{
  
     }
 
+    public function showEliminarMaterial($id_material){
+        $material = $this->materialesModel->getMaterialById($id_material);
+        $this->view->showEliminarMaterial($material); //mensaje para confirmar el delete
+    }
+
+    public function delMaterial($id_material){
+
+        echo ("Llamar a la función de borrado del modelo");
+ 
+    }
+
+    public function showActualizarMaterial($id_material){
+        $material = $this->materialesModel->getMaterialById($id_material);
+        $this->view->showActualizarMaterial($material); // Muestra el formulario precargado 
+    }
+
+    public function uptMaterial($id_material){
+
+        echo ("Llamar a la función de actualizar del modelo");
+         
+    }
+
 }
 
 

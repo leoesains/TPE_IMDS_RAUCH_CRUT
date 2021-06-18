@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-06-2021 a las 15:58:42
+-- Tiempo de generación: 18-06-2021 a las 17:08:37
 -- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.6
+-- Versión de PHP: 7.2.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,7 +36,9 @@ CREATE TABLE `aviso_de_retiro` (
   `email` varchar(30) NOT NULL,
   `franja_horaria` varchar(15) NOT NULL,
   `volumen` varchar(60) NOT NULL,
-  `fotografia` varchar(100) DEFAULT NULL
+  `fotografia` varchar(100) DEFAULT NULL,
+  `estado` varchar(10) NOT NULL,
+  `fecha_entrega` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -64,6 +66,20 @@ CREATE TABLE `material` (
   `nombre` varchar(15) NOT NULL,
   `requerimiento_de_recibo` varchar(200) NOT NULL,
   `img` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `stock_cartonero`
+--
+
+CREATE TABLE `stock_cartonero` (
+  `id_stock` int(11) NOT NULL,
+  `id_material` int(11) NOT NULL,
+  `dni_cartonero` int(10) NOT NULL,
+  `fecha_entrega` date NOT NULL,
+  `kilos` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -102,6 +118,14 @@ ALTER TABLE `material`
   ADD PRIMARY KEY (`id_material`);
 
 --
+-- Indices de la tabla `stock_cartonero`
+--
+ALTER TABLE `stock_cartonero`
+  ADD PRIMARY KEY (`id_stock`),
+  ADD KEY `dni_cartonero` (`dni_cartonero`),
+  ADD KEY `id_material` (`id_material`);
+
+--
 -- Indices de la tabla `vehiculo_cartonero`
 --
 ALTER TABLE `vehiculo_cartonero`
@@ -125,6 +149,12 @@ ALTER TABLE `material`
   MODIFY `id_material` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT de la tabla `stock_cartonero`
+--
+ALTER TABLE `stock_cartonero`
+  MODIFY `id_stock` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `vehiculo_cartonero`
 --
 ALTER TABLE `vehiculo_cartonero`
@@ -133,6 +163,13 @@ ALTER TABLE `vehiculo_cartonero`
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `stock_cartonero`
+--
+ALTER TABLE `stock_cartonero`
+  ADD CONSTRAINT `stock_cartonero_ibfk_1` FOREIGN KEY (`id_material`) REFERENCES `material` (`id_material`),
+  ADD CONSTRAINT `stock_cartonero_ibfk_2` FOREIGN KEY (`dni_cartonero`) REFERENCES `cartonero` (`dni_cartonero`);
 
 --
 -- Filtros para la tabla `vehiculo_cartonero`

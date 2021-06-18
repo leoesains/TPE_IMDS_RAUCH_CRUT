@@ -77,6 +77,10 @@ footer{
     background-image: url(listado_de_materiales.png);
     /*margin-left: 550px;*/
 }
+.pesaje{
+    background-image: url(balanza.png);
+    margin-left: 50px;
+}
 .recuadroError{
     padding: 10px;
     background-color:#A8CF45;

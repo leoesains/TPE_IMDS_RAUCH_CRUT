@@ -12,11 +12,13 @@
         </select>
         <select class="input" name="pesoMaterial">
             <option hidden selected>Material</option>
-            <option value="{$materiales->nombre}">
-                {foreach from=$materiales item=material}   
+            
+            {foreach from=$materiales item=material} 
+                <option value="{$materiales->nombre}">  
                     <a href="materiales/{$material->id_material}">{$material->nombre}</a>
-                {/foreach}
-            </option>
+                </option>
+            {/foreach}
+            
         </select>
         <div class="form-group">
             <input type="number" name="input_name" class="input"  placeholder="Ingrese el peso">

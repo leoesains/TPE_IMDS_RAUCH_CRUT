@@ -67,9 +67,7 @@ class AdminController{
     }
 
     public function delMaterial($id_material){
-
-        echo ("Llamar a la función de borrado del modelo");
- 
+        $this->materialesModel->delMaterial($id_material);
     }
 
     public function showActualizarMaterial($id_material){

@@ -61,4 +61,9 @@ class MaterialesModel extends dbConectionModel {
         return $query->execute([$nombre_material, $forma_entrega, $pathImg, $id_material]);
 
     }
+
+    public function delMaterial($id_material) {
+        $sentence=$this->getConnection()->prepare("DELETE FROM material WHERE id_material=?");
+        $sentence->execute([$id_material]);
+    }
 }

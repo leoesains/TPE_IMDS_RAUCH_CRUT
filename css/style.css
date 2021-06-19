@@ -16,7 +16,6 @@ footer{
     padding: 30px;
     background-color: #324C7C;
     margin-top: 250px;
-
 }
 .fondo{
     width: 100%;
@@ -60,7 +59,6 @@ footer{
     margin-top: 40px;
     margin-left: 50px;  
 }
-
 .aviso_retiro{
     background-image: url(aviso_de_retiro.png);
     /*margin-left: 50px;*/
@@ -79,7 +77,6 @@ footer{
 }
 .pesaje{
     background-image: url(balanza.png);
-    margin-left: 50px;
 }
 .recuadroError{
     padding: 10px;
@@ -126,8 +123,8 @@ footer{
     width: 400px;
     padding: 3px;
     margin-bottom: 10px;
-    font-size: 16px;
-    background-color: #ffffff8c;
+    font-size: 18px;
+    background-color: #ffffffc0;
     border: 3px solid #399917;
     border-radius: 8px;
 }
@@ -185,7 +182,7 @@ footer{
     margin-left: 10px;
     padding: 5px;
     border: solid 3px #399917;
-    background-color: #ffffff8c;
+    background-color: #ffffffc0;
     border-radius: 10px;
 }
 .tablaMateriales{
@@ -227,13 +224,11 @@ td {
     text-decoration: none;
     color: white
 }
-
 .materiales_aceptados{
     display:flex;
     justify-content: center;
     align-items: center;
 }
-
 .carton{
     background-image: url(carton.png);
     margin-left: 400px;
@@ -257,5 +252,18 @@ td {
     color: rgb(207, 206, 206);
     background-color: #324C7C;
     padding: 4px;
-   
+}
+.formPesaje{
+    margin-top: 80px;
+}
+.formPesaje .formInputsAviso{
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+.formPesaje .formInputsAviso select{
+    margin: 10px;
+}
+.formPesaje .formInputsAviso div{
+    margin: 10px;
 }

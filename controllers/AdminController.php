@@ -84,17 +84,13 @@ class AdminController{
     }
 
     public function showAvisosDeRetiro(){
-       
         $avisos = $this->avisosModel->getAll();
-       
         $this->view->showAvisos($avisos);
     }
 
     public function showPesaje(){
-
-        //$pesajes = $this->pesajeModel->getpesajeAll();
-        
-        $this->view->showPesaje();
+        $materiales = $this->materialesModel->getAll();
+        $this->view->showPesaje($materiales);
 
     }
 

@@ -91,4 +91,11 @@ Class View{
         $this->getSmarty()->assign('material',$material);
         $this->getSmarty()->display('showActualizarMaterial.tpl');
     }
+
+     //Muestra formulario para pesaje
+     public function showPesaje($materiales){
+        $this->getSmarty()->assign('title', 'C.R.U.T.');
+        $this->getSmarty()->assign('materiales',$materiales );
+        $this->getSmarty()->display('formPesaje.tpl');
+    }
 }

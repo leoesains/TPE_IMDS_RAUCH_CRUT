@@ -97,7 +97,7 @@
                         }
                         else if ($parametros[2] == "upd"){
                             $controller = new AdminController;
-                            $controller -> uptMaterial($parametros[3]);
+                            $controller -> uptMaterial();
                         }
                         else{
                             $controller = new PublicController;

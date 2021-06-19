@@ -77,12 +77,37 @@ class AdminController{
         $this->view->showActualizarMaterial($material); // Muestra el formulario precargado 
     }
 
-    public function uptMaterial($id_material){
+    public function uptMaterial(){
+        $id_material = $_POST['id_material'];
+        $nombre = $_POST['nombre'];
+        $forma_entrega = $_POST['formaDeEntrega'];
+        $material = $this->materialesModel->getMaterialById($id_material);
+        $imagen = $_FILES['input_name']['error'];
 
-        echo ("Llamar a la función de actualizar del modelo");
-
+        //si no edita la imagen, deja la que estaba
+        if (empty($nombre) || empty($forma_entrega)){
+            $this->view->showActualizarMaterial($material, 'Campos incompletos!');
+        }
+        else if ($imagen == 4){
+            $this->materialesModel->updNotImg($id_material, $nombre, $forma_entrega);
+            header('location:'.BASE_URL.'admin/materiales');
+        }
+        else{
+            if($_FILES['input_name']['type'] == "image/jpg" || $_FILES['input_name']['type'] == "image/jpeg" 
+            || $_FILES['input_name']['type'] == "image/png"){
+                $success = $this->materialesModel->upd($id_material, $nombre, $forma_entrega, $_FILES['input_name']['tmp_name'], $_FILES['input_name']['name']);
+            }
+            else{
+                $success = $this->materialesModel->upd($id_material, $nombre, $forma_entrega);
+            }
+     
+            if($success) {
+                header('location:'.BASE_URL.'admin/materiales');
+            } else {
+                $this->view->showActualizarMaterial($material, 'No se pudo realizar la modificacion');
+            }
+        }
     }
-
 
     public function showAvisosDeRetiro(){
         $avisos = $this->avisosModel->getAll();
@@ -96,8 +121,5 @@ class AdminController{
     }
 
 }
-
-    
-
 
 ?>

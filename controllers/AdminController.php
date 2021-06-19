@@ -80,8 +80,9 @@ class AdminController{
     public function uptMaterial($id_material){
 
         echo ("Llamar a la función de actualizar del modelo");
-         
+
     }
+
 
     public function showAvisosDeRetiro(){
         $avisos = $this->avisosModel->getAll();

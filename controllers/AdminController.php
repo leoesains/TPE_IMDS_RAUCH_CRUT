@@ -68,6 +68,7 @@ class AdminController{
 
     public function delMaterial($id_material){
         $this->materialesModel->delMaterial($id_material);
+        header('location:'.BASE_URL.'admin/materiales');
     }
 
     public function showActualizarMaterial($id_material){

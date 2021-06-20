@@ -64,6 +64,10 @@
                 $controller = new AdminController;
                 $controller -> showAvisosDeRetiro();
             }
+            else if ($parametros[1] == "pesaje"){
+                $controller = new AdminController;
+                $controller -> showPesaje();
+            }
             else{
                 if ($parametros[1] == "materiales"){
                     if(empty($parametros[2])){
@@ -93,7 +97,7 @@
                         }
                         else if ($parametros[2] == "upd"){
                             $controller = new AdminController;
-                            $controller -> uptMaterial($parametros[3]);
+                            $controller -> uptMaterial();
                         }
                         else{
                             $controller = new PublicController;

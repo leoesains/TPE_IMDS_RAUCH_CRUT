@@ -42,4 +42,23 @@ class MaterialesModel extends dbConectionModel {
         move_uploaded_file($imagen, $target);
         return $target;
     }
+
+    //Funcion de editar un material sin cambiar la imagen
+    public function updNotImg($id_material, $nombre, $forma_entrega){
+        $query = $this->getConnection()->prepare("UPDATE material SET nombre = ?, requerimiento_de_recibo = ?
+        WHERE id_material = ?");
+        return $query->execute([$nombre, $forma_entrega, $id_material]);
+    }
+
+    //Funcion de editar un material y su imagen 
+    public function upd($id_material, $nombre_material, $forma_entrega, $imagen = null, $nombre = null){
+        $pathImg=null; 
+        if ($imagen){
+            $pathImg = $this->uploadImage($imagen, $nombre);
+        }
+        $query = $this->getConnection()->prepare("UPDATE material SET nombre = ?, requerimiento_de_recibo = ?, img = ?
+        WHERE id_material = ?");
+        return $query->execute([$nombre_material, $forma_entrega, $pathImg, $id_material]);
+
+    }
 }

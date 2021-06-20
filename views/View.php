@@ -86,9 +86,17 @@ Class View{
     }
 
     //Muestra formulario para actualizar datos
-    public function showActualizarMaterial($material){
+    public function showActualizarMaterial($material, $error = null){
         $this->getSmarty()->assign('title', 'C.R.U.T.');
         $this->getSmarty()->assign('material',$material);
+        $this->getSmarty()->assign('error', $error);
         $this->getSmarty()->display('showActualizarMaterial.tpl');
+    }
+
+     //Muestra formulario para pesaje
+     public function showPesaje($materiales){
+        $this->getSmarty()->assign('title', 'C.R.U.T.');
+        $this->getSmarty()->assign('materiales',$materiales );
+        $this->getSmarty()->display('formPesaje.tpl');
     }
 }

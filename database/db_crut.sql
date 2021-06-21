@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 18-06-2021 a las 17:08:37
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.2.29
+-- Host: 127.0.0.1
+-- Generation Time: Jun 21, 2021 at 03:41 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `db_crut`
+-- Database: `db_crut`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `aviso_de_retiro`
+-- Table structure for table `aviso_de_retiro`
 --
 
 CREATE TABLE `aviso_de_retiro` (
@@ -41,10 +41,19 @@ CREATE TABLE `aviso_de_retiro` (
   `fecha_entrega` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `aviso_de_retiro`
+--
+
+INSERT INTO `aviso_de_retiro` (`id_aviso`, `nombre`, `apellido`, `direccion`, `telefono`, `email`, `franja_horaria`, `volumen`, `fotografia`, `estado`, `fecha_entrega`) VALUES
+(1, 'Santiago', 'Pérez', 'Alem 203', '2494730199', 'sperez@gmail.com', 'De 9 a 12 hs', 'Entra en una caja', NULL, 'Pendiente', '2021-06-21'),
+(2, 'Yanina', 'Álvarez', 'Paso 890', '2494550138', 'yalvarez@gmail.com', 'De 13 a 17 hs', 'Entra en la caja de una camioneta', 'uploads/images/60d06ddb17a420.78275732.jpg', 'Pendiente', '2021-06-21'),
+(3, 'Patricia', 'Ramos', 'Uribe 201', '2494771900', 'puribe@gmail.com', 'De 9 a 12 hs', 'Entra en el baúl de un auto', NULL, 'Pendiente', '2021-06-21');
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cartonero`
+-- Table structure for table `cartonero`
 --
 
 CREATE TABLE `cartonero` (
@@ -55,10 +64,26 @@ CREATE TABLE `cartonero` (
   `fecha_nacimiento` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `cartonero`
+--
+
+INSERT INTO `cartonero` (`dni_cartonero`, `nombre`, `apellido`, `direccion`, `fecha_nacimiento`) VALUES
+(13030812, 'Eladio', 'Sosa', 'San Martín 1402', '1948-11-06'),
+(17643933, 'Mariana', 'Burgoa', 'Solis 1812', '1956-02-20'),
+(20837099, 'Eduardo', 'Casas', 'Petriz 125', '1973-05-12'),
+(22090381, 'Isabela', 'Galván', 'Elcano 998', '1966-01-10'),
+(28983182, 'Valentín', 'Díaz', 'Peñasco 232', '1985-11-01'),
+(30719337, 'Bárbara', 'Bonifacio', 'Constitución 1468', '1982-03-04'),
+(33093118, 'Fabiana', 'Hernández', 'Asunción 102', '1983-05-29'),
+(34962192, 'Mauro', 'Lombardo', 'Aveleyra 322', '1988-10-22'),
+(39701232, 'Serafín', 'Leonídas', 'Tacuarembó 124', '1999-11-08'),
+(40243991, 'Ursula', 'Noguera', 'Pueyrredon 711', '2001-05-18');
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `material`
+-- Table structure for table `material`
 --
 
 CREATE TABLE `material` (
@@ -68,10 +93,22 @@ CREATE TABLE `material` (
   `img` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `material`
+--
+
+INSERT INTO `material` (`id_material`, `nombre`, `requerimiento_de_recibo`, `img`) VALUES
+(3, 'cartón', 'seco', 'uploads/images/60d076a1e1f401.31969202.png'),
+(4, 'lata', 'evitar filo', 'uploads/images/60d076c3024c00.50696574.png'),
+(5, 'madera', 'sin barnizar', 'uploads/images/60d076e2390c46.41898469.png'),
+(6, 'papel', 'apilarlo con piola', 'uploads/images/60d076f7be9237.49331250.png'),
+(7, 'plástico', 'No PVC', 'uploads/images/60d0770fddca55.24109897.png'),
+(8, 'vidrio', 'envolver en diario', 'uploads/images/60d0772bb37ee4.03265189.png');
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `stock_cartonero`
+-- Table structure for table `stock_cartonero`
 --
 
 CREATE TABLE `stock_cartonero` (
@@ -85,7 +122,7 @@ CREATE TABLE `stock_cartonero` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `vehiculo_cartonero`
+-- Table structure for table `vehiculo_cartonero`
 --
 
 CREATE TABLE `vehiculo_cartonero` (
@@ -96,29 +133,29 @@ CREATE TABLE `vehiculo_cartonero` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `aviso_de_retiro`
+-- Indexes for table `aviso_de_retiro`
 --
 ALTER TABLE `aviso_de_retiro`
   ADD PRIMARY KEY (`id_aviso`);
 
 --
--- Indices de la tabla `cartonero`
+-- Indexes for table `cartonero`
 --
 ALTER TABLE `cartonero`
   ADD PRIMARY KEY (`dni_cartonero`);
 
 --
--- Indices de la tabla `material`
+-- Indexes for table `material`
 --
 ALTER TABLE `material`
   ADD PRIMARY KEY (`id_material`);
 
 --
--- Indices de la tabla `stock_cartonero`
+-- Indexes for table `stock_cartonero`
 --
 ALTER TABLE `stock_cartonero`
   ADD PRIMARY KEY (`id_stock`),
@@ -126,53 +163,53 @@ ALTER TABLE `stock_cartonero`
   ADD KEY `id_material` (`id_material`);
 
 --
--- Indices de la tabla `vehiculo_cartonero`
+-- Indexes for table `vehiculo_cartonero`
 --
 ALTER TABLE `vehiculo_cartonero`
   ADD PRIMARY KEY (`id_vehiculo`,`dni_cartonero`),
   ADD KEY `fk_vehiculo_cartonero_cartonero` (`dni_cartonero`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `aviso_de_retiro`
+-- AUTO_INCREMENT for table `aviso_de_retiro`
 --
 ALTER TABLE `aviso_de_retiro`
-  MODIFY `id_aviso` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_aviso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `material`
+-- AUTO_INCREMENT for table `material`
 --
 ALTER TABLE `material`
-  MODIFY `id_material` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_material` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT de la tabla `stock_cartonero`
+-- AUTO_INCREMENT for table `stock_cartonero`
 --
 ALTER TABLE `stock_cartonero`
   MODIFY `id_stock` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `vehiculo_cartonero`
+-- AUTO_INCREMENT for table `vehiculo_cartonero`
 --
 ALTER TABLE `vehiculo_cartonero`
   MODIFY `id_vehiculo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `stock_cartonero`
+-- Constraints for table `stock_cartonero`
 --
 ALTER TABLE `stock_cartonero`
   ADD CONSTRAINT `stock_cartonero_ibfk_1` FOREIGN KEY (`id_material`) REFERENCES `material` (`id_material`),
   ADD CONSTRAINT `stock_cartonero_ibfk_2` FOREIGN KEY (`dni_cartonero`) REFERENCES `cartonero` (`dni_cartonero`);
 
 --
--- Filtros para la tabla `vehiculo_cartonero`
+-- Constraints for table `vehiculo_cartonero`
 --
 ALTER TABLE `vehiculo_cartonero`
   ADD CONSTRAINT `fk_vehiculo_cartonero_cartonero` FOREIGN KEY (`dni_cartonero`) REFERENCES `cartonero` (`dni_cartonero`) ON DELETE CASCADE ON UPDATE CASCADE;

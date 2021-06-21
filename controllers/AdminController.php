@@ -3,20 +3,20 @@
 require_once 'views/View.php';
 require_once 'models/materiales.model.php';
 require_once 'models/aviso.model.php';
-
+require_once 'models/cartoneros.model.php';
 
 class AdminController{
 
     private $view;
     private $materialesModel;
     private $avisosModel;
+    private $cartonerosModel;
     
     public function __construct() {
         $this->view = new View();
         $this->materialesModel = new MaterialesModel();
         $this->avisosModel = new AvisoModel();
-        
-
+        $this->cartonerosModel = new CartonerosModel();
     }  
 
     public function showAdmin(){
@@ -115,8 +115,8 @@ class AdminController{
 
     public function showPesaje(){
         $materiales = $this->materialesModel->getAll();
-        $this->view->showPesaje($materiales);
-
+        $cartoneros = $this->cartonerosModel->getAll();
+        $this->view->showPesaje($materiales, $cartoneros);
     }
 
     public function addPesaje(){

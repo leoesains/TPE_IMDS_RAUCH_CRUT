@@ -56,7 +56,9 @@ class AdminController{
             else{
                 $this->view->viewError("Este material no pudo ser cargado");
             }
-
+        }
+        else{
+            $this->view->viewError("Debe completarse todos los campos");
         }
  
     }
@@ -120,7 +122,24 @@ class AdminController{
     }
 
     public function addPesaje(){
-        header('location:'.BASE_URL.'admin/pesaje');
+        $id_cartonero = $_POST['pesoCartonero'];
+        $id_material = $_POST['pesoMaterial'];
+        $kilos = $_POST['peso'];
+        $fecha_entrega = date("Y-m-d");
+
+        if (!empty($id_cartonero) && !empty($id_material) && !empty($kilos)){
+            $success = $this->cartonerosModel->addStock($id_material,$id_cartonero,$fecha_entrega,$kilos);
+            if ($success){
+                header('location:'.BASE_URL.'admin/pesaje');
+            }
+            else{
+                $this->view->viewError("Error al cargar el pesaje");
+            }
+        }
+        else{
+            $this->view->viewError("Debe completarse todos los campos");
+        }
+        
     }
 
 }

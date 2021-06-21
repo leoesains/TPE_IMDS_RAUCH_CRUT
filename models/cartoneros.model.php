@@ -13,5 +13,13 @@ class CartonerosModel extends dbConectionModel {
         $materiales = $query->fetchAll(PDO::FETCH_OBJ);    //Guardo todos los materiales en $materiales (arreglo)
         return $materiales;
     }
+
+    //Agrega un registro a la tabla stock_cartonero
+    public function addStock($id_material,$id_cartonero,$fecha_entrega,$kilos){
+        $sql = "INSERT INTO stock_cartonero(id_material, dni_cartonero, fecha_entrega, kilos) VALUES (?, ?, ?, ?)";
+        $query = $this->getConnection()->prepare($sql);  
+        $result = $query->execute([$id_material,$id_cartonero,$fecha_entrega,$kilos]);   
+        return $result;  
+    }
      
 }

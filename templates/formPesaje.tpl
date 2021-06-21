@@ -14,7 +14,7 @@
             <option hidden selected>Material</option>
             
             {foreach from=$materiales item=material} 
-                <option value="{$materiales->nombre}">  
+                <option value="{$material->nombre}">  
                     <a href="materiales/{$material->id_material}">{$material->nombre}</a>
                 </option>
             {/foreach}

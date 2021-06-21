@@ -58,5 +58,6 @@
 <button class="btn-agregar">
     <a href="admin">Volver</a>
 </button>
+</div>
   
 {include 'footerAdmin.tpl'}

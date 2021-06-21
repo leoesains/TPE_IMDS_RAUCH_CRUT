@@ -75,6 +75,7 @@ Class View{
 
     public function showAvisos($avisos){
         $this->getSmarty()->assign('title', 'C.R.U.T.');
+        $this->getSmarty()->assign('avisos',$avisos);
         $this->getSmarty()->display('avisosDeRetiro.tpl');
     }
 

@@ -25,7 +25,7 @@
         </div>
         <div>
             <button class="btn-agregar">
-                <a href="admin/pesaje">Agregar</a>
+                <a href="admin/pesaje/add">Agregar</a>
             </button>
             <button class="btn-agregar">
                 <a href="admin/pesaje">Cancelar</a>

@@ -119,6 +119,10 @@ class AdminController{
 
     }
 
+    public function addPesaje(){
+        header('location:'.BASE_URL.'admin/pesaje');
+    }
+
 }
 
 ?>

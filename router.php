@@ -65,8 +65,18 @@
                 $controller -> showAvisosDeRetiro();
             }
             else if ($parametros[1] == "pesaje"){
-                $controller = new AdminController;
-                $controller -> showPesaje();
+                if(empty($parametros[2])){
+                    $controller = new AdminController;
+                    $controller -> showPesaje();
+                }
+                else if ($parametros[2] == "add"){
+                    $controller = new AdminController;
+                    $controller -> addPesaje();
+                }  
+                else{
+                    $controller = new PublicController;
+                    $controller->showError();
+                }              
             }
             else{
                 if ($parametros[1] == "materiales"){

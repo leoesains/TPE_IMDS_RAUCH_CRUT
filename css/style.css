@@ -73,7 +73,9 @@ footer{
 }
 .listado_materiales{
     background-image: url(listado_de_materiales.png);
-    /*margin-left: 550px;*/
+}
+.cartelera{
+    background-image: url(cartelera.png);
 }
 .pesaje{
     background-image: url(balanza.png);

@@ -8,7 +8,7 @@
 
     <div>
         {*<a href="avisos"><button class="redondo lista_cartonero"></button></a>*}
-        <a href="admin/listadoDeAvisos"><button class="redondo listado_materiales"></button></a>
+        <a href="admin/listadoDeAvisos"><button class="redondo cartelera"></button></a>
     </div>
 
     <div>

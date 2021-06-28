@@ -75,6 +75,7 @@ Class View{
 
     public function showAvisos($avisos){
         $this->getSmarty()->assign('title', 'C.R.U.T.');
+        $this->getSmarty()->assign('avisos',$avisos);
         $this->getSmarty()->display('avisosDeRetiro.tpl');
     }
 
@@ -94,9 +95,16 @@ Class View{
     }
 
      //Muestra formulario para pesaje
-     public function showPesaje($materiales){
+     public function showPesaje($materiales, $cartoneros){
         $this->getSmarty()->assign('title', 'C.R.U.T.');
-        $this->getSmarty()->assign('materiales',$materiales );
+        $this->getSmarty()->assign('materiales',$materiales);
+        $this->getSmarty()->assign('cartoneros',$cartoneros);
         $this->getSmarty()->display('formPesaje.tpl');
+    }
+
+    public function showStock($cartoneros){
+        $this->getSmarty()->assign('title', 'C.R.U.T.');
+        $this->getSmarty()->assign('cartoneros',$cartoneros);
+        $this->getSmarty()->display('showStock.tpl');
     }
 }

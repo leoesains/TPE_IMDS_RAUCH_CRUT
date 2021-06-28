@@ -3,20 +3,20 @@
 require_once 'views/View.php';
 require_once 'models/materiales.model.php';
 require_once 'models/aviso.model.php';
-
+require_once 'models/cartoneros.model.php';
 
 class AdminController{
 
     private $view;
     private $materialesModel;
     private $avisosModel;
+    private $cartonerosModel;
     
     public function __construct() {
         $this->view = new View();
         $this->materialesModel = new MaterialesModel();
         $this->avisosModel = new AvisoModel();
-        
-
+        $this->cartonerosModel = new CartonerosModel();
     }  
 
     public function showAdmin(){
@@ -56,7 +56,9 @@ class AdminController{
             else{
                 $this->view->viewError("Este material no pudo ser cargado");
             }
-
+        }
+        else{
+            $this->view->viewError("Debe completarse todos los campos");
         }
  
     }
@@ -115,8 +117,34 @@ class AdminController{
 
     public function showPesaje(){
         $materiales = $this->materialesModel->getAll();
-        $this->view->showPesaje($materiales);
+        $cartoneros = $this->cartonerosModel->getAll();
+        $this->view->showPesaje($materiales, $cartoneros);
+    }
 
+    public function addPesaje(){
+        $id_cartonero = $_POST['pesoCartonero'];
+        $id_material = $_POST['pesoMaterial'];
+        $kilos = $_POST['peso'];
+        $fecha_entrega = date("Y-m-d");
+
+        if (!empty($id_cartonero) && !empty($id_material) && !empty($kilos)){
+            $success = $this->cartonerosModel->addStock($id_material,$id_cartonero,$fecha_entrega,$kilos);
+            if ($success){
+                header('location:'.BASE_URL.'admin/pesaje');
+            }
+            else{
+                $this->view->viewError("Error al cargar el pesaje");
+            }
+        }
+        else{
+            $this->view->viewError("Debe completarse todos los campos");
+        }
+        
+    }
+
+    public function showStock(){
+        $cartoneros = $this->cartonerosModel->getAll();
+        $this->view->showStock($cartoneros);
     }
 
 }

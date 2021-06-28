@@ -1,32 +1,24 @@
 {include 'header.tpl'}
 
 <div class="formPesaje">
-    <form class="formInputsAviso" action="admin/pesaje" method="POST" enctype="multipart/form-data">
+    <form class="formInputsAviso" action="admin/pesaje/add" method="POST" enctype="multipart/form-data">
         <select class="input" name="pesoCartonero">
             <option hidden selected>Nombre del Cartonero</option>
-            <option value="Esains, Leonardo">Esains, Leonardo</option>
-            <option value="Esains, Sebastian">Esains, Sebastian</option>
-            <option value="Loiza, Joaquín">Loiza, Joaquín</option>
-            <option value="Oruezabal, Mauricio">Oruezabal, Mauricio</option>
-            <option value="Miller, Eugenio">Miller, Eugenio</option>
+            {foreach from=$cartoneros item=cartonero} 
+                <option value="{$cartonero->dni_cartonero}">{$cartonero->apellido}, {$cartonero->nombre}</option>
+            {/foreach}
         </select>
         <select class="input" name="pesoMaterial">
-            <option hidden selected>Material</option>
-            
+            <option hidden selected>Material</option> 
             {foreach from=$materiales item=material} 
-                <option value="{$materiales->nombre}">  
-                    <a href="materiales/{$material->id_material}">{$material->nombre}</a>
-                </option>
-            {/foreach}
-            
+                <option value="{$material->id_material}">{$material->nombre}</a></option>
+            {/foreach}     
         </select>
         <div class="form-group">
-            <input type="number" name="input_name" class="input"  placeholder="Ingrese el peso">
+            <input type="number" name="peso" class="input"  placeholder="Ingrese el peso">
         </div>
         <div>
-            <button class="btn-agregar">
-                <a href="admin/pesaje">Agregar</a>
-            </button>
+            <input type="submit" value="Agregar" class="btn-agregar">
             <button class="btn-agregar">
                 <a href="admin/pesaje">Cancelar</a>
             </button>

@@ -30,5 +30,21 @@ class CartonerosModel extends dbConectionModel {
 
         return $result;
     }
+
+    //Devuelve un cartonero
+    public function getCartonero($dni) {
+        $sql = "SELECT * FROM cartonero WHERE dni_cartonero = ?";
+        $query = $this->getConnection()->prepare($sql);    
+        $query->execute([$dni]);        //La ejecuto
+        $cartonero = $query->fetch(PDO::FETCH_OBJ);    
+        return $cartonero;
+    }
+
+    //actualiza los datos de un cartonero  
+    public function update($dni, $nombre, $apellido, $direccion, $fechaNacimiento, $tipoVehiculo) {
+        $sql = "UPDATE cartonero SET nombre = ?, apellido = ?, direccion = ?, fecha_nacimiento = ?, tipo_vehiculo WHERE dni_cartonero = $dni";
+        $query = $this->getConnection()->prepare($sql);  
+        $query->execute([$nombre, $apellido, $direccion, $fechaNacimiento, $tipoVehiculo]);        
+    }
      
 }

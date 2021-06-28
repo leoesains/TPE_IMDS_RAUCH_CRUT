@@ -82,6 +82,10 @@
                     $controller->showError();
                 }              
             }
+            else if ($parametros[1] == "stock"){
+                $controller = new AdminController;
+                $controller -> showStock();
+            }
             else{
                 if ($parametros[1] == "materiales"){
                     if(empty($parametros[2])){

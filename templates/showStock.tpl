@@ -10,4 +10,7 @@
     </select>
 </div>
 
+
+<button class="btn-volver"><a href="{$base_url}admin"> Volver </a></button>
+
 {include 'footerAdmin.tpl'}

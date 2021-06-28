@@ -21,5 +21,14 @@ class CartonerosModel extends dbConectionModel {
         $result = $query->execute([$id_material,$id_cartonero,$fecha_entrega,$kilos]);   
         return $result;  
     }
+
+    //Trae los materiales recolectados por un cartonero, según su DNI
+    public function getMaterialesById($dni){
+        $sql = "SELECT * FROM stock_cartonero WHERE dni_cartonero = dni";
+        $query = $this->getConnection()->prepare($sql);  
+        $result = $query->fetchAll(PDO::FETCH_OBJ); 
+
+        return $result;
+    }
      
 }

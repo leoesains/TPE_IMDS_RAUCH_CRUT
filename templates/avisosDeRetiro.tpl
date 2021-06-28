@@ -13,7 +13,7 @@
           <th scope="col">Volumen</th>
           <th scope="col">Foto</th>
           <th scope="col">Estado</th>
-          <th scope="col">Fecha de Entrega</th>
+          <th scope="col">Fecha de Carga</th>
 
         </tr>
       </thead>

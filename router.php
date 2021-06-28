@@ -64,6 +64,10 @@
                 $controller = new AdminController;
                 $controller -> showAvisosDeRetiro();
             }
+            else if ($parametros[1] == "stock"){
+                $controller = new AdminController;
+                $controller -> showStock();
+            }
             else if ($parametros[1] == "pesaje"){
                 if(empty($parametros[2])){
                     $controller = new AdminController;

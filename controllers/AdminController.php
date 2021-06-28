@@ -142,6 +142,11 @@ class AdminController{
         
     }
 
+    public function showStock(){
+        $cartoneros = $this->cartonerosModel->getAll();
+        $this->view->showStock($cartoneros);
+    }
+
 }
 
 ?>

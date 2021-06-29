@@ -10,7 +10,11 @@
     </select>
 </div>
 
+{include 'vue.js/stock.vue'}
 
 <button class="btn-volver"><a href="{$base_url}admin"> Volver </a></button>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="js/stock.js"></script>
 
 {include 'footerAdmin.tpl'}

@@ -107,4 +107,16 @@ Class View{
         $this->getSmarty()->assign('cartoneros',$cartoneros);
         $this->getSmarty()->display('showStock.tpl');
     }
+
+    public function showCartoneros(){
+        $this->getSmarty()->assign('title', 'C.R.U.T.');
+        $this->getSmarty()->display('abmCartoneros.tpl');
+    }
+    public function showFormAddCartoneros(){
+        
+        $this->getSmarty()->display('addCartoneros.tpl');
+    }
+
+
 }
+

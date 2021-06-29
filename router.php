@@ -86,6 +86,16 @@
                 $controller = new AdminController;
                 $controller -> showStock();
             }
+            else if ($parametros[1] == "cartoneros"){
+                    if(empty($parametros[2])){
+                        $controller = new AdminController;
+                        $controller -> showCartoneros();
+                    
+                    }else if($parametros[2] == "agregar"){
+                            $controller = new AdminController;
+                            $controller -> showFormAddCartoneros();
+                    }
+            }
             else{
                 if ($parametros[1] == "materiales"){
                     if(empty($parametros[2])){
@@ -128,6 +138,7 @@
                     $controller->showError();
                 }
             }
+            
                                
         break;
 

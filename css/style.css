@@ -44,8 +44,8 @@ footer{
     background-position: center;
     background-color: white;
     border: solid 4px #399917;
-    width: 150px;
-    height: 150px ;
+    width: 200px;
+    height: 200px ;
     border-radius: 50%;
     margin-top: 40px;
     text-align: center;
@@ -53,8 +53,8 @@ footer{
 .btn_material{
     background-color: white;
     border: solid 4px #399917;
-    width: 110px;
-    height: 110px ;
+    width: 180px;
+    height: 180px ;
     border-radius: 50%;
     margin-top: 40px;
     margin-left: 50px;  
@@ -62,23 +62,67 @@ footer{
 .aviso_retiro{
     background-image: url(aviso_de_retiro.png);
     /*margin-left: 50px;*/
+    background-size: 100px;
 }
 .lista_materiales{
     background-image: url(lista_de_materiales.png);
     margin-left: 50px;
+    background-size: 130px;
 }
 .lista_cartonero{
     background-image: url(listado_cartoneros.png);
     margin-left: 400px;
+    background-size: 150px;
 }
 .listado_materiales{
     background-image: url(listado_de_materiales.png);
+    background-size: 120px;
 }
 .cartelera{
     background-image: url(cartelera.png);
+    background-size: 110px;
 }
 .pesaje{
     background-image: url(balanza.png);
+    background-size: 140px;
+}
+.stock{
+    background-image: url(stock.png);
+    background-size: 150px;
+}
+.cartonero{
+    background-image: url(ABMCart.png);
+    background-size: 140px;
+}
+.abmCartonero{
+    background-image: url(agregar.png);
+    background-size: 140px;
+}
+.materiales_aceptados{
+    margin-top: 80px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.materiales_aceptados div{
+    margin: 15px;
+}
+.addCartoneros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.admin{
+    margin: auto;
+    width: 60%;
+    display:flex;
+    justify-content: center;  
+    flex-wrap: wrap;
+}
+.admin div{
+    margin: 15px;
 }
 .recuadroError{
     padding: 10px;
@@ -88,7 +132,7 @@ footer{
 }
 .btn-volver{
     background-color: #399917;
-    font-size: 15px;
+    font-size: 20px;
     border-radius: 20px;
     padding: 8px;
     margin-top: 10px;
@@ -125,12 +169,12 @@ footer{
     width: 400px;
     padding: 3px;
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 20px;
     background-color: #ffffffc0;
     border: 3px solid #399917;
     border-radius: 8px;
 }
-.titleAvisoDeRetito {
+.titleAvisoDeRetiro {
     text-align: center;
     color: #399917;
 }
@@ -138,7 +182,7 @@ footer{
     width: 120px;
 }
 .formInputsAviso p{
-    font-size: 12px;
+    font-size: 16px;
     width: 300px;
     color: rgb(207, 206, 206);
     background-color: #324C7C;
@@ -217,20 +261,16 @@ td {
     margin-left: 20px;
     background-color: #399917;
     color: white;
-    font-size: 15px;
+    font-size: 16px;
     border-radius: 20px;
-    padding: 8px;
+    padding: 10px;
     margin-top: 5px;
 }
 .btn-agregar a {
     text-decoration: none;
     color: white
 }
-.materiales_aceptados{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
+
 .carton{
     background-image: url(carton.png);
     margin-left: 400px;
@@ -269,11 +309,9 @@ td {
 .formPesaje .formInputsAviso div{
     margin: 10px;
 }
-
 .texto-centrado{
     text-align: center;
 }
-
 .container-stock{
     background-color: rgba(255, 255, 255, 0.7);
 }

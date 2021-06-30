@@ -1,5 +1,5 @@
 {include 'header.tpl'}
-<h1 class="titleAvisoDeRetito" >AVISO DE RETIRO</h1>
+<h1 class="titleAvisoDeRetiro" >AVISO DE RETIRO</h1>
 <div class="contFormAviso">
     <form class="formInputsAviso" action="avisos/add" method="POST" enctype="multipart/form-data">
         <!--Nombre-->

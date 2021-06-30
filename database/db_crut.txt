@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-06-2021 a las 19:34:02
+-- Tiempo de generación: 30-06-2021 a las 01:27:18
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -80,6 +80,20 @@ CREATE TABLE `secretaria` (
   `contrasenia` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `stock_cartonero`
+--
+
+CREATE TABLE `stock_cartonero` (
+  `id_stock` int(11) NOT NULL,
+  `id_material` int(10) NOT NULL,
+  `dni_cartonero` int(15) NOT NULL,
+  `fecha_entrega` date NOT NULL,
+  `kilos` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Índices para tablas volcadas
 --
@@ -109,6 +123,12 @@ ALTER TABLE `secretaria`
   ADD PRIMARY KEY (`id_secretaria`);
 
 --
+-- Indices de la tabla `stock_cartonero`
+--
+ALTER TABLE `stock_cartonero`
+  ADD PRIMARY KEY (`id_stock`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -123,6 +143,12 @@ ALTER TABLE `aviso_de_retiro`
 --
 ALTER TABLE `material`
   MODIFY `id_material` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `stock_cartonero`
+--
+ALTER TABLE `stock_cartonero`
+  MODIFY `id_stock` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

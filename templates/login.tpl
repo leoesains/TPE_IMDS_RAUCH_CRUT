@@ -2,9 +2,14 @@
         <div>
             <div>
             <p>Debe loguearse</p>
+            <p>
+                    {if $error}
+                        {$error}
+                    {/if}
+                </p>
             </div>
             <div>
-                <form method="POST" action="verify">
+                <form method="POST" action="verifylogin">
                     <div>
                         <label>Usuario</label>
                         <input type="text" name="usuario" placeholder="Usuario">
@@ -15,6 +20,7 @@
                     </div>
                     <button type="submit" class="btn-volver">Ingresar</button>
                 </form>
+                
             </div> 
         </div>
 {include file="footerAdmin.tpl"}

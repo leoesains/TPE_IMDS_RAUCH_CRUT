@@ -60,6 +60,11 @@
             $controller->showLogin();
         }
         break;
+        case 'verifylogin': {
+            $controller = new PublicController;
+            $controller->verifyLogin();
+        }
+        break;
 
         case 'admin':
             if(empty($parametros[1])){

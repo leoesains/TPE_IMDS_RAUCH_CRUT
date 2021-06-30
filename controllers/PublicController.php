@@ -2,11 +2,14 @@
 
 require_once 'models/aviso.model.php';
 require_once 'models/materiales.model.php';
+require_once 'models/secretaria.model.php'; 
 require_once 'views/View.php';
+
 
 class PublicController{
 
-    private $materialesModel; 
+    private $materialesModel;
+    private $secretariaModel;
     private $view;
     private $minRand;
     private $maxRand;
@@ -15,6 +18,7 @@ class PublicController{
 
     public function __construct() {
         $this->materialesModel = new MaterialesModel();
+        $this->secretariaModel = new SecretariaModel();
         $this->avisoModel = new avisoModel();
         $this->view = new View;
         $this->minRand = 1;
@@ -29,6 +33,34 @@ class PublicController{
 
     public function showLogin(){
         $this->view->showFormLogin();
+    }
+
+
+    //verificar que el usuario esta registrado
+    public function verifyLogin(){
+        $usuario = $_POST['usuario'];
+        $password = $_POST['contrasenia'];
+        $us = $this->secretariaModel->get($usuario);
+
+        if(empty($usuario)) {
+            $this->view->showFormLogin("Ingrese el nombre de usuario");
+        } 
+        else if (empty($password)){
+            $this->view->showFormLogin("Ingrese la contraseña");
+        }
+        else{
+            if(empty($us)){
+                $this->view->showFormLogin("No existe el usuario");
+            }
+            else{
+                if($us && $password == $us->contrasenia){
+                    header("Location: " . BASE_URL . 'admin');
+                }
+                else {
+                    $this->view->showFormLogin("Contraseña Incorrecta");
+                }
+            }
+        }
     }
 
     public function showMateriales(){

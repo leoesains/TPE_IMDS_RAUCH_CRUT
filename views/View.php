@@ -16,16 +16,13 @@ Class View{
     }
 
     public function showHome(){
-
         $this->getSmarty()->assign('title', 'C.R.U.T.');
-
         $this->getSmarty()->display('home.tpl');
-        
-       
     }
 
-    public function showFormLogin(){
+    public function showFormLogin($error = null){
         $this->getSmarty()->assign('title', 'C.R.U.T.');
+        $this->getSmarty()->assign('error', $error);
         $this->getSmarty()->display('login.tpl');
     }
 

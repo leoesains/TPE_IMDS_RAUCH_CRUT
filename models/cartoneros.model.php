@@ -62,10 +62,11 @@ class CartonerosModel extends dbConectionModel {
     }
 
     //actualiza los datos de un cartonero  
-    public function upd($dni, $nombre, $apellido, $direccion, $fechaNacimiento, $tipoVehiculo) {
-        $sql = "UPDATE cartonero SET nombre = ?, apellido = ?, direccion = ?, fecha_nacimiento = ?, tipo_vehiculo WHERE dni_cartonero = $dni";
+    public function upd($nombre, $apellido, $direccion, $fechaNacimiento, $tipoVehiculo, $dni) {
+        $sql = "UPDATE cartonero SET nombre = ?, apellido = ?, direccion = ?, fecha_nacimiento = ?, tipo_vehiculo = ? WHERE cartonero.dni_cartonero = ?";
         $query = $this->getConnection()->prepare($sql);  
-        $query->execute([$nombre, $apellido, $direccion, $fechaNacimiento, $tipoVehiculo]);        
+        $succes = $query->execute([$nombre, $apellido, $direccion, $fechaNacimiento, $tipoVehiculo, $dni]);        
+        return $succes;
     }
     //elimnar un cartonero segun un dni
     public function del_cartonero($id){

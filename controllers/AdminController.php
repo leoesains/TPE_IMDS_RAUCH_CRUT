@@ -174,7 +174,25 @@ class AdminController{
 
 
     public function updCartonero(){
-        //header('location:'.BASE_URL.'admin/cartoneros');
+        $dni_cartonero = $_POST['dni_cartonero'];
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apellido'];
+        $direccion = $_POST['direccion'];
+        $fecha = $_POST['fecha_nacimiento'];
+        $vehiculo = $_POST['tipo_vehiculo'];
+
+        if (!empty($dni_cartonero) && !empty($nombre) && !empty($apellido) && !empty($direccion) && !empty($fecha) && !empty ($vehiculo)){
+           $success = $this->cartonerosModel->upd($nombre, $apellido, $direccion, $fecha, $vehiculo, $dni_cartonero);
+           if ($success){
+                header('location:'.BASE_URL.'admin/cartoneros');
+           }
+           else {
+                $this->view->viewError("Error al editar cartonero");
+           }
+        }
+        else{
+            $this->view->viewError("Debe completarse todos los campos");
+        }
     }
 
 }

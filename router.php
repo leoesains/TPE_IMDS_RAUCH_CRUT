@@ -114,6 +114,10 @@
                         $controller = new AdminController;
                         $controller -> showEditarCartonero($parametros[3]);
                     }
+                    else if ($parametros[2] == "upd"){
+                        $controller = new AdminController;
+                        $controller -> updCartonero();
+                    }
                     
 
 
@@ -139,11 +143,11 @@
                         }
                         else if ($parametros[2] == "del"){
                             $controller = new AdminController;
-                            $controller -> delCartonero($parametros[3]);
+                            $controller -> delMaterial($parametros[3]);
                         }
                         else if ($parametros[2] == "actualizar"){
                             $controller = new AdminController;
-                            $controller -> showActualizarCartonero($parametros[3]);
+                            $controller -> showActualizarMaterial($parametros[3]);
                         }
                         else if ($parametros[2] == "upd"){
                             $controller = new AdminController;

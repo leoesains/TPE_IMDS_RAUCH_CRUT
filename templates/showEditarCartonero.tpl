@@ -3,7 +3,7 @@
 <div class="addMaterial">
   
   <h1>Modificar Cartonero </h1>
-  <form action="admin/cartoneros/actualizar" method="POST" enctype="multipart/form-data" class="formInputsAviso">
+  <form action="admin/cartoneros/upd" method="POST" enctype="multipart/form-data" class="formInputsAviso">
     <input type="hidden" name="dni_cartonero" value="{$cartonero->dni_cartonero}">
     <div class="form-group">
     <label>Nombre</label><br><br>

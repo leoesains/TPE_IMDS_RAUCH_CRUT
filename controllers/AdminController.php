@@ -19,9 +19,6 @@ class AdminController{
         $this->cartonerosModel = new CartonerosModel();
     }  
     
-    public function showLogin(){
-        $this->view->showFormLogin();
-    }
     public function showAdmin(){
         $this->view->showHomeAdmin();
     }

@@ -56,7 +56,7 @@
         break;
 
         case 'login': {
-            $controller = new AdminController;
+            $controller = new PublicController;
             $controller->showLogin();
         }
         break;

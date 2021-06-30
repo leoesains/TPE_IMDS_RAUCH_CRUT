@@ -27,6 +27,10 @@ class PublicController{
         $this->view->showHome();
     }
 
+    public function showLogin(){
+        $this->view->showFormLogin();
+    }
+
     public function showMateriales(){
         //Pido todos los materiales al MODELO
         $materiales = $this->materialesModel->getAll(); //--> función que trae todos los materiales

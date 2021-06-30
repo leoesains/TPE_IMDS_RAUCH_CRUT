@@ -41,7 +41,7 @@ class CartonerosModel extends dbConectionModel {
     }
 
     //actualiza los datos de un cartonero  
-    public function update($dni, $nombre, $apellido, $direccion, $fechaNacimiento, $tipoVehiculo) {
+    public function upd($dni, $nombre, $apellido, $direccion, $fechaNacimiento, $tipoVehiculo) {
         $sql = "UPDATE cartonero SET nombre = ?, apellido = ?, direccion = ?, fecha_nacimiento = ?, tipo_vehiculo WHERE dni_cartonero = $dni";
         $query = $this->getConnection()->prepare($sql);  
         $query->execute([$nombre, $apellido, $direccion, $fechaNacimiento, $tipoVehiculo]);        

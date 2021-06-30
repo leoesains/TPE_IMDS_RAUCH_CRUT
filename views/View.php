@@ -117,6 +117,20 @@ Class View{
         $this->getSmarty()->display('addCartoneros.tpl');
     }
 
+    public function showCartonerosAdmin($cartoneros){
+        $this->getSmarty()->assign('title', 'C.R.U.T.');
+        $this->getSmarty()->assign('cartoneros',$cartoneros );
+        $this->getSmarty()->display('abmCartoneros.tpl');
+    }
+
+    //Muestra mensaje para de confirmación del borrado
+    public function showEliminarCartonero($cartonero){
+        $this->getSmarty()->assign('title', 'C.R.U.T.');
+        $this->getSmarty()->assign('cartonero',$cartonero);
+        $this->getSmarty()->display('showEliminarCartonero.tpl');
+    }
+
+    
 
 }
 

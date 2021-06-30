@@ -166,7 +166,8 @@ class AdminController{
     }
 
     public function delCartonero($dni_cartonero){
-        echo "Hacer lo que falta para el borrado!!!";
+        $this->cartonerosModel->del_cartonero($dni_cartonero);
+        header('location:'.BASE_URL.'admin/cartoneros');
     }
 
     

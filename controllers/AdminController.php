@@ -18,7 +18,10 @@ class AdminController{
         $this->avisosModel = new AvisoModel();
         $this->cartonerosModel = new CartonerosModel();
     }  
-
+    
+    public function showLogin(){
+        $this->view->showFormLogin();
+    }
     public function showAdmin(){
         $this->view->showHomeAdmin();
     }

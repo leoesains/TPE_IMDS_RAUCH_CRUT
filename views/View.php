@@ -24,6 +24,11 @@ Class View{
        
     }
 
+    public function showFormLogin(){
+        $this->getSmarty()->assign('title', 'C.R.U.T.');
+        $this->getSmarty()->display('login.tpl');
+    }
+
     public function showHomeAdmin(){
 
         $this->getSmarty()->assign('title', 'C.R.U.T.');

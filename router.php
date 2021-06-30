@@ -55,6 +55,12 @@
             }
         break;
 
+        case 'login': {
+            $controller = new AdminController;
+            $controller->showLogin();
+        }
+        break;
+
         case 'admin':
             if(empty($parametros[1])){
                 $controller = new AdminController;

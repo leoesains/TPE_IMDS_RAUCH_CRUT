@@ -162,6 +162,34 @@ class AdminController{
         $this->view->showEliminarCartonero($cartonero); //mensaje para confirmar el delete
     }
 
+    public function addCartonero(){
+        $nombre = $_POST['nombre'];
+        $apellido=$_POST['apellido'];
+        $direccion=$_POST['direccion'];
+        $dni=$_POST['dni'];
+        $fecha_nacimiento=$_POST['fecha_nacimiento'];
+        $vehiculo=$_POST['vehiculo'];
+
+        if( !empty($nombre) && !empty($apellido) && !empty($direccion) && !empty($dni) && !empty($fecha_nacimiento) && !empty($vehiculo)){
+            $cartoneroExiste = $this->cartonerosModel->getCartonero($dni);
+            if ($cartoneroExiste){
+                $this->view->viewError("Ese cartonero ya existe");
+            }
+            else{
+                $exito = $this->cartonerosModel->addCartonero($dni,$nombre,$apellido,$direccion,$fecha_nacimiento,$vehiculo);
+                if ($exito){
+                    header('location:'.BASE_URL.'admin/cartoneros');
+                }
+                else{
+                    $this->view->viewError("El cartonero no pudo ser ingresado");
+                }
+            }
+        }
+        else{
+            $this->view->viewError("Debe completarse todos los campos");
+        }   
+    }
+
     public function delCartonero($dni_cartonero){
         $this->cartonerosModel->del_cartonero($dni_cartonero);
         header('location:'.BASE_URL.'admin/cartoneros');

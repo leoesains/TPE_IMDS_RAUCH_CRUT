@@ -61,6 +61,14 @@ class CartonerosModel extends dbConectionModel {
         return $cartonero;
     }
 
+    public function addCartonero($dni,$nombre,$apellido,$direccion,$fecha_nacimiento,$vehiculo) {
+        $sql = "INSERT INTO cartonero(dni_cartonero, nombre, apellido, direccion, fecha_nacimiento, tipo_vehiculo) VALUES (?, ?, ?, ?, ?, ?)";
+        $query = $this->getConnection()->prepare($sql);  
+        $result = $query->execute([$dni,$nombre,$apellido,$direccion,$fecha_nacimiento,$vehiculo]);   
+        return $result; 
+    }
+
+
     //actualiza los datos de un cartonero  
     public function upd($dni, $nombre, $apellido, $direccion, $fechaNacimiento, $tipoVehiculo) {
         $sql = "UPDATE cartonero SET nombre = ?, apellido = ?, direccion = ?, fecha_nacimiento = ?, tipo_vehiculo WHERE dni_cartonero = $dni";

@@ -2,7 +2,7 @@
 
 <h1 class="titleAvisoDeRetiro" >Ingresar Cartonero</h1>
 <div class="contFormAviso">
-    <form class="formInputsAviso" action="cartoneros/add" method="POST" enctype="multipart/form-data">
+    <form class="formInputsAviso" action="admin/cartoneros/add" method="POST" enctype="multipart/form-data">
         <!--Nombre-->
         <input type="text" class="input" name="nombre" placeholder="Nombre" autocomplete="off">
         <!--Apellido-->

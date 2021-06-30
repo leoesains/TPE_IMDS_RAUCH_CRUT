@@ -95,6 +95,18 @@
                             $controller = new AdminController;
                             $controller -> showFormAddCartoneros();
                     }
+
+                    else if ($parametros[2] == "eliminar"){
+                        $controller = new AdminController;
+                        $controller -> showEliminarCartonero($parametros[3]);
+                    }
+                    else if ($parametros[2] == "del"){
+                        $controller = new AdminController;
+                        $controller -> delCartonero($parametros[3]);
+                    }
+                    
+
+
             }
             else{
                 if ($parametros[1] == "materiales"){
@@ -117,15 +129,15 @@
                         }
                         else if ($parametros[2] == "del"){
                             $controller = new AdminController;
-                            $controller -> delMaterial($parametros[3]);
+                            $controller -> delCartonero($parametros[3]);
                         }
                         else if ($parametros[2] == "actualizar"){
                             $controller = new AdminController;
-                            $controller -> showActualizarMaterial($parametros[3]);
+                            $controller -> showActualizarCartonero($parametros[3]);
                         }
                         else if ($parametros[2] == "upd"){
                             $controller = new AdminController;
-                            $controller -> uptMaterial();
+                            $controller -> updMaterial();
                         }
                         else{
                             $controller = new PublicController;
@@ -133,12 +145,13 @@
                         }
                     }
                 }
-                else{
-                    $controller = new PublicController;
-                    $controller->showError();
-                }
+                else
+                    {
+                        $controller = new PublicController;
+                        $controller->showError();
+                    }
+                
             }
-            
                                
         break;
 

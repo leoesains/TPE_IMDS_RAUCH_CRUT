@@ -78,7 +78,7 @@ class AdminController{
         $this->view->showActualizarMaterial($material); // Muestra el formulario precargado 
     }
 
-    public function uptMaterial(){
+    public function updMaterial(){
         $id_material = $_POST['id_material'];
         $nombre = $_POST['nombre'];
         $forma_entrega = $_POST['formaDeEntrega'];
@@ -146,14 +146,28 @@ class AdminController{
         $cartoneros = $this->cartonerosModel->getAll();
         $this->view->showStock($cartoneros);
     }
-    public function showCartoneros(){
-
-        $this->view->showCartoneros();
-    }
+    
     public function showFormAddCartoneros(){
 
         $this->view->showFormAddCartoneros();
     }
+
+    public function showCartoneros(){
+        $cartoneros = $this->cartonerosModel->getAll(); // Retorna un arreglo de clave-valor, se recorre como en la línea 37
+        $this->view->showCartonerosAdmin($cartoneros); 
+    }
+
+    public function showEliminarCartonero($dni_cartonero){
+        $cartonero = $this->cartonerosModel->getCartonero($dni_cartonero);
+        $this->view->showEliminarCartonero($cartonero); //mensaje para confirmar el delete
+    }
+
+    public function delCartonero($dni_cartonero){
+        echo "Hacer lo que falta para el borrado!!!";
+    }
+
+    
+
 }
 
 ?>

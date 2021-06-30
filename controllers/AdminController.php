@@ -166,6 +166,11 @@ class AdminController{
         $this->cartonerosModel->del_cartonero($dni_cartonero);
         header('location:'.BASE_URL.'admin/cartoneros');
     }
+    //para que muestre el formulario precargado
+    public function showEditarCartonero($dni_cartonero){
+        $cartonero=$this->cartonerosModel->getCartonero($dni_cartonero);
+        $this->view->showEditarCartonero($cartonero);
+    }
 
 
     public function updCartonero(){

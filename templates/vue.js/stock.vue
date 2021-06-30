@@ -1,6 +1,6 @@
 {literal}
 <section id="templateVueStock">
-    <p>Stock por cartonero</p>
+    <h2 id=nameCartonero>Stock por cartonero</h2>
     <table>
         <thead>
             <tr>
@@ -15,8 +15,9 @@
                     {{entry[name]}}
                 </td>
             </tr>
+            <td v-if=!stock.length :colspan="columns.length"> No cargó materiales aún </td>
         </tbody>
     </table>
-    <p style="background-color:white;"> Cantidad de kilos acumulados: <span id=cantTotal></span><p>
+    <p v-show=stock.length style="background-color:white;"> Cantidad de kilos acumulados: <span id=cantTotal></span><p>
 </section>
 {/literal}

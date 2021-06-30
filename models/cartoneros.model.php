@@ -31,6 +31,27 @@ class CartonerosModel extends dbConectionModel {
         return $result;
     }
 
+    //Trae todo de la tabla stock_cartonero - (podría ir en otro modelo aparte)
+    public function getStock(){
+        $sql = "SELECT * FROM stock_cartonero";
+        $query = $this->getConnection()->prepare($sql);    //Preparo la sentencia sql para hacer la consulta
+        $query->execute();        //la ejecuto
+        $stock = $query->fetchAll(PDO::FETCH_OBJ);    //Guardo todos los materiales en $materiales (arreglo)
+        return $stock;
+    }
+
+    // Lo mismo que getMaterialesById($dni), solo que con la info de cartonero y material (JOIN)
+    public function getStockById($dni) {
+        $sql = "SELECT m.nombre AS material, st.kilos, st.fecha_entrega AS fecha 
+                FROM cartonero c JOIN stock_cartonero st ON c.dni_cartonero = st.dni_cartonero 
+                JOIN material m ON st.id_material = m.id_material
+                WHERE c.dni_cartonero = ?";
+        $query = $this->getConnection()->prepare($sql);    
+        $query->execute([$dni]);        //La ejecuto
+        $cartonero = $query->fetchAll(PDO::FETCH_OBJ);    
+        return $cartonero;
+    }
+
     //Devuelve un cartonero
     public function getCartonero($dni) {
         $sql = "SELECT * FROM cartonero WHERE dni_cartonero = ?";

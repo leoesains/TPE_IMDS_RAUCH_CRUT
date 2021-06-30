@@ -110,6 +110,10 @@
                         $controller = new AdminController;
                         $controller -> delCartonero($parametros[3]);
                     }
+                    else if ($parametros[2] == "actualizar"){
+                        $controller = new AdminController;
+                        $controller -> showEditarCartonero($parametros[3]);
+                    }
                     
 
 

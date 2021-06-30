@@ -167,7 +167,10 @@ class AdminController{
         header('location:'.BASE_URL.'admin/cartoneros');
     }
 
-    
+
+    public function updCartonero(){
+        //header('location:'.BASE_URL.'admin/cartoneros');
+    }
 
 }
 

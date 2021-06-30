@@ -20,7 +20,6 @@
                     </div>
                     <button type="submit" class="btn-volver">Ingresar</button>
                 </form>
-                
             </div> 
         </div>
 {include file="footerAdmin.tpl"}

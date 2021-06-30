@@ -4,6 +4,7 @@ require_once 'views/View.php';
 require_once 'models/materiales.model.php';
 require_once 'models/aviso.model.php';
 require_once 'models/cartoneros.model.php';
+require_once 'helpers/helpers.php';
 
 class AdminController{
 
@@ -19,6 +20,11 @@ class AdminController{
         $this->cartonerosModel = new CartonerosModel();
     }  
     
+    public function logout() {
+        HelperAuth::logout();
+        header("Location: " . BASE_URL . 'home');
+    }
+
     public function showAdmin(){
         $this->view->showHomeAdmin();
     }

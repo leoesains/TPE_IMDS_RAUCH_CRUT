@@ -63,6 +63,7 @@ class PublicController{
         }
     }
 
+
     public function showMateriales(){
         //Pido todos los materiales al MODELO
         $materiales = $this->materialesModel->getAll(); //--> función que trae todos los materiales

@@ -65,6 +65,10 @@
             $controller->verifyLogin();
         }
         break;
+        case 'logout':{
+            $controller = new AdminController;
+            $controller->logout();
+        }
 
         case 'admin':
             if(empty($parametros[1])){
@@ -122,16 +126,10 @@
                         $controller = new AdminController;
                         $controller -> showEditarCartonero($parametros[3]);
                     }
-<<<<<<< HEAD
                     else if ($parametros[2] == "upd"){
                         $controller = new AdminController;
                         $controller -> updCartonero();
                     }
-                    
-
-
-=======
->>>>>>> 142053aa7d214450a488e8c1569d964b6091cca8
             }
             else{
                 if ($parametros[1] == "materiales"){

@@ -67,5 +67,10 @@ class CartonerosModel extends dbConectionModel {
         $query = $this->getConnection()->prepare($sql);  
         $query->execute([$nombre, $apellido, $direccion, $fechaNacimiento, $tipoVehiculo]);        
     }
+    //elimnar un cartonero segun un dni
+    public function del_cartonero($id){
+        $sentence=$this->db->prepare("DELETE FROM cartonero  WHERE dni_cartonero=?");
+        $sentence->execute([$id]);
+    }
      
 }

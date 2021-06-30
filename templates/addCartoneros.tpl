@@ -17,8 +17,8 @@
         <!--Vehículo--> 
         <select class="input" name="vehiculo">
             <option hidden selected>Tipo de Vehículo</option>
-            <option value="Auto pequeño">Auto pequeño</option>
-            <option value="Auto grande">Auto grande</option>
+            <option value="Auto">Auto</option>
+            <option value="Utilitario">Utilitario</option>
             <option value="Camioneta">Camioneta</option>
             <option value="Camión">Camión</option>
         </select>

@@ -131,6 +131,11 @@ Class View{
         $this->getSmarty()->assign('cartonero',$cartonero);
         $this->getSmarty()->display('showEliminarCartonero.tpl');
     }
+    public function showEditarCartonero($cartonero){
+        $this->getSmarty()->assign('title', 'C.R.U.T.');
+        $this->getSmarty()->assign('cartonero',$cartonero);
+        $this->getSmarty()->display('showEditarCartonero.tpl');
+    }
 
     
 

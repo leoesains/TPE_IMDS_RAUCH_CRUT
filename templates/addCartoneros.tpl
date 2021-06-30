@@ -2,7 +2,7 @@
 
 <h1 class="titleAvisoDeRetiro" >Ingresar Cartonero</h1>
 <div class="contFormAviso">
-    <form class="formInputsAviso" action="cartoneros/add" method="POST" enctype="multipart/form-data">
+    <form class="formInputsAviso" action="admin/cartoneros/add" method="POST" enctype="multipart/form-data">
         <!--Nombre-->
         <input type="text" class="input" name="nombre" placeholder="Nombre" autocomplete="off">
         <!--Apellido-->
@@ -17,8 +17,8 @@
         <!--Vehículo--> 
         <select class="input" name="vehiculo">
             <option hidden selected>Tipo de Vehículo</option>
-            <option value="Auto pequeño">Auto pequeño</option>
-            <option value="Auto grande">Auto grande</option>
+            <option value="Auto">Auto</option>
+            <option value="Utilitario">Utilitario</option>
             <option value="Camioneta">Camioneta</option>
             <option value="Camión">Camión</option>
         </select>

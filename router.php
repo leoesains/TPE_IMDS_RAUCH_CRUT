@@ -101,12 +101,15 @@
                     if(empty($parametros[2])){
                         $controller = new AdminController;
                         $controller -> showCartoneros();
-                    
-                    }else if($parametros[2] == "agregar"){
+                    }
+                    else if($parametros[2] == "agregar"){
                             $controller = new AdminController;
                             $controller -> showFormAddCartoneros();
                     }
-
+                    else if ($parametros[2] == "add"){
+                        $controller = new AdminController;
+                        $controller -> addCartonero();
+                    }
                     else if ($parametros[2] == "eliminar"){
                         $controller = new AdminController;
                         $controller -> showEliminarCartonero($parametros[3]);
@@ -115,9 +118,20 @@
                         $controller = new AdminController;
                         $controller -> delCartonero($parametros[3]);
                     }
+                    else if ($parametros[2] == "actualizar"){
+                        $controller = new AdminController;
+                        $controller -> showEditarCartonero($parametros[3]);
+                    }
+<<<<<<< HEAD
+                    else if ($parametros[2] == "upd"){
+                        $controller = new AdminController;
+                        $controller -> updCartonero();
+                    }
                     
 
 
+=======
+>>>>>>> 142053aa7d214450a488e8c1569d964b6091cca8
             }
             else{
                 if ($parametros[1] == "materiales"){
@@ -140,11 +154,11 @@
                         }
                         else if ($parametros[2] == "del"){
                             $controller = new AdminController;
-                            $controller -> delCartonero($parametros[3]);
+                            $controller -> delMaterial($parametros[3]);
                         }
                         else if ($parametros[2] == "actualizar"){
                             $controller = new AdminController;
-                            $controller -> showActualizarCartonero($parametros[3]);
+                            $controller -> showActualizarMaterial($parametros[3]);
                         }
                         else if ($parametros[2] == "upd"){
                             $controller = new AdminController;
@@ -156,12 +170,10 @@
                         }
                     }
                 }
-                else
-                    {
-                        $controller = new PublicController;
-                        $controller->showError();
+                else{
+                    $controller = new PublicController;
+                    $controller->showError();
                     }
-                
             }
                                
         break;

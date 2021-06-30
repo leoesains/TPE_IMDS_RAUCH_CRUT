@@ -162,12 +162,66 @@ class AdminController{
         $this->view->showEliminarCartonero($cartonero); //mensaje para confirmar el delete
     }
 
+    public function addCartonero(){
+        $nombre = $_POST['nombre'];
+        $apellido=$_POST['apellido'];
+        $direccion=$_POST['direccion'];
+        $dni=$_POST['dni'];
+        $fecha_nacimiento=$_POST['fecha_nacimiento'];
+        $vehiculo=$_POST['vehiculo'];
+
+        if( !empty($nombre) && !empty($apellido) && !empty($direccion) && !empty($dni) && !empty($fecha_nacimiento) && !empty($vehiculo)){
+            $cartoneroExiste = $this->cartonerosModel->getCartonero($dni);
+            if ($cartoneroExiste){
+                $this->view->viewError("Ese cartonero ya existe");
+            }
+            else{
+                $exito = $this->cartonerosModel->addCartonero($dni,$nombre,$apellido,$direccion,$fecha_nacimiento,$vehiculo);
+                if ($exito){
+                    header('location:'.BASE_URL.'admin/cartoneros');
+                }
+                else{
+                    $this->view->viewError("El cartonero no pudo ser ingresado");
+                }
+            }
+        }
+        else{
+            $this->view->viewError("Debe completarse todos los campos");
+        }   
+    }
+
     public function delCartonero($dni_cartonero){
         $this->cartonerosModel->del_cartonero($dni_cartonero);
         header('location:'.BASE_URL.'admin/cartoneros');
     }
+    //para que muestre el formulario precargado
+    public function showEditarCartonero($dni_cartonero){
+        $cartonero=$this->cartonerosModel->getCartonero($dni_cartonero);
+        $this->view->showEditarCartonero($cartonero);
+    }
 
-    
+
+    public function updCartonero(){
+        $dni_cartonero = $_POST['dni_cartonero'];
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apellido'];
+        $direccion = $_POST['direccion'];
+        $fecha = $_POST['fecha_nacimiento'];
+        $vehiculo = $_POST['tipo_vehiculo'];
+
+        if (!empty($dni_cartonero) && !empty($nombre) && !empty($apellido) && !empty($direccion) && !empty($fecha) && !empty ($vehiculo)){
+           $success = $this->cartonerosModel->upd($nombre, $apellido, $direccion, $fecha, $vehiculo, $dni_cartonero);
+           if ($success){
+                header('location:'.BASE_URL.'admin/cartoneros');
+           }
+           else {
+                $this->view->viewError("Error al editar cartonero");
+           }
+        }
+        else{
+            $this->view->viewError("Debe completarse todos los campos");
+        }
+    }
 
 }
 

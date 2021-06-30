@@ -115,7 +115,7 @@ Class View{
         $this->getSmarty()->display('abmCartoneros.tpl');
     }
     public function showFormAddCartoneros(){
-        
+        $this->getSmarty()->assign('title', 'C.R.U.T.');
         $this->getSmarty()->display('addCartoneros.tpl');
     }
 

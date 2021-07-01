@@ -11,6 +11,13 @@
             return (isset($_SESSION['IS_LOGGED']));
         }
 
+        static public function checkLoggedAdmin() {
+            self::start();  
+            if (!isset($_SESSION['IS_LOGGED'])) {
+                header('Location: ' . BASE_URL . 'login');
+            } 
+        }
+
         static public function login($user) {
             self::start();
             //logueo al usuario

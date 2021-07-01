@@ -18,6 +18,7 @@ class AdminController{
         $this->materialesModel = new MaterialesModel();
         $this->avisosModel = new AvisoModel();
         $this->cartonerosModel = new CartonerosModel();
+        HelperAuth::checkLoggedAdmin();
     }  
     
     public function logout() {

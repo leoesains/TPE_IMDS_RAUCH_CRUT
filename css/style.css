@@ -338,7 +338,8 @@ td {
     font-size: 18px;
 }
 .login{
-    margin: 30px;
+    background-color: #ffffffc0;
+    margin: auto;
     width: 25%; 
     font-size: 20px;
     border-radius: 20px;

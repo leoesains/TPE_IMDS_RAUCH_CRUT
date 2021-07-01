@@ -13,10 +13,9 @@
 
         static public function login($user) {
             self::start();
-                //logueo al usuario
-                $_SESSION['IS_LOGGED'] = true;
-                $_SESSION['USERNAME'] = $user->nombre;
-
+            //logueo al usuario
+            $_SESSION['IS_LOGGED'] = true;
+            $_SESSION['USERNAME'] = $user->nombre;
         }
 
         // destruye la sesion 

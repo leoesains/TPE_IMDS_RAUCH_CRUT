@@ -1,10 +1,9 @@
 <?php
-
 require_once 'models/aviso.model.php';
 require_once 'models/materiales.model.php';
 require_once 'models/secretaria.model.php'; 
 require_once 'views/View.php';
-
+require_once 'helpers/helpers.php';
 
 class PublicController{
 
@@ -22,7 +21,7 @@ class PublicController{
         $this->avisoModel = new avisoModel();
         $this->view = new View;
         $this->minRand = 1;
-        $this->minRand = 12;
+        $this->maxRand = 12;
         $this->maxKmPermitidos = 6;
         $this->maxPesoImg = 1100000; //Peso max en bytes.
     }  
@@ -34,7 +33,6 @@ class PublicController{
     public function showLogin(){
         $this->view->showFormLogin();
     }
-
 
     //verificar que el usuario esta registrado
     public function verifyLogin(){
@@ -54,6 +52,7 @@ class PublicController{
             }
             else{
                 if($us && $password == $us->contrasenia){
+                    HelperAuth::login($us);
                     header("Location: " . BASE_URL . 'admin');
                 }
                 else {
@@ -62,7 +61,6 @@ class PublicController{
             }
         }
     }
-
 
     public function showMateriales(){
         //Pido todos los materiales al MODELO
@@ -135,7 +133,7 @@ class PublicController{
     }
 
     public function showAvisos() {
-        $this->view->showAvisos();
+        //$this->view->showAvisos();
     }
 
     public function verificarImagen($peso, $extension){

@@ -11,6 +11,14 @@
             return (isset($_SESSION['IS_LOGGED']));
         }
 
+        static public function getUsername() {
+            self::start();
+            if (isset($_SESSION['USERNAME'])) {
+                return $_SESSION['USERNAME'];
+            }
+        return false;
+        }
+
         static public function checkLoggedAdmin() {
             self::start();  
             if (!isset($_SESSION['IS_LOGGED'])) {

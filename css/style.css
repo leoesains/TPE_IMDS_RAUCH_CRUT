@@ -12,6 +12,23 @@ body{
     display: flex;
     align-items: center;
 }
+
+.userSession {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+}
+
+.saludo {
+    background-color: #4e4e4e69;
+    font-size: 1.5rem;
+    color: #f1f1f1;
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
 footer{
     padding: 30px;
     background-color: #324C7C;
@@ -130,7 +147,7 @@ footer{
     font-size: 20px;
     color: #324C7C;
 }
-.btn-volver{
+.btn-volver, .btnLogout{
     background-color: #399917;
     font-size: 20px;
     border-radius: 20px;
@@ -138,7 +155,7 @@ footer{
     margin-top: 10px;
     color: white;
 }
-.btn-volver a {
+.btn-volver a , .btnLogout a{
     text-decoration: none;
     color: white;
 }

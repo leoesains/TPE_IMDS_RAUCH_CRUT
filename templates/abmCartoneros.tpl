@@ -44,17 +44,11 @@
         {/foreach}
       </tbody>
     </table>
-
-    
 </div>
-    
-    
-    
-    
     <div class="addCartoneros"> 
         <div >
             <div>
-                <a href="admin/cartoneros/agregar"><button class="redondo abmCartonero"></button></a>
+                <a href="admin/cartoneros/agregar"><input type="submit" value="Agregar cartonero" class="btn-agregar"></a>
             </div>
         </div>
         <button class="btn-agregar">

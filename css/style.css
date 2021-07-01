@@ -136,10 +136,11 @@ footer{
     border-radius: 20px;
     padding: 8px;
     margin-top: 10px;
+    color: white;
 }
 .btn-volver a {
     text-decoration: none;
-    color: white
+    color: white;
 }
 .circulo_requerimientos{
     width: 15rem;
@@ -310,12 +311,78 @@ td {
     margin: 10px;
 }
 .texto-centrado{
+    color: white;
     text-align: center;
+    margin: 10px;
+    text-shadow:  -2px 2px 0 #3a3a3b;
 }
-.container-stock{
-    background-color: rgba(255, 255, 255, 0.7);
+.container-stock{   
+    
+    width: auto; 
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
+.vistaStock{
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    flex-direction: column;
+    
+}
+.bloque-centrado{
+    margin: 10px;
+    font-size: 18px;
+}
+.login{
+    margin: 30px;
+    width: 25%; 
+    font-size: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login p{
+    color: #324C7C;
+    font-size: 22px;
+    font-weight: bold;
+}
+.userPass{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.userPass input{
+    margin: 5px;
+}
+#templateVueStock{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#templateVueStock h2{
+    color: white;
+    font-weight: bold;
+    text-shadow:  -3px 3px 0 #232324;
+}
+.titleAvisoDeRetiro{
+    color: white;
+    font-weight: bold;
+    text-shadow:  -3px 3px 0 #232324;
+}
+#stockCartonero{
+    padding: 5px;
+    border: solid 3px #399917;
+    background-color: #ffffffc0;
+    border-radius: 20px;
+}
 .p-error {
-    background-color: #A8CF45;
+    background-color: #ffffff;
+
 }

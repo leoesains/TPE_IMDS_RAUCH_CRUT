@@ -1,6 +1,6 @@
 {literal}
 <section id="templateVueStock">
-    <h2 id=nameCartonero>Stock por cartonero</h2>
+    <h2 class="titleAvisoDeRetiro" id="nameCartonero">Stock por cartonero</h2>
     <table>
         <thead>
             <tr>

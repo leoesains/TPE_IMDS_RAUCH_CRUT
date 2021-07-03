@@ -14,14 +14,14 @@
                 <img src="{$base_url}img/logo.png" alt="Isologotipo" class="logo-principal">
         </header>
         <div class="userSession"> 
-        {if !empty($session)}
-            <div>
-                <p class="saludo">Hola {$username}!</p>
-            </div>
-            <div>
-                <button class="btnLogout">
-                    <a href="logout">Logout</a>
-                </button>
-            </div>
-        {/if}
+            {if !empty($session)}
+                <div>
+                    <p class="saludo">Hola {$username}!</p>
+                </div>
+                <div>
+                    <button class="btnLogout">
+                        <a href="logout">Logout</a>
+                    </button>
+                </div>
+            {/if}
         </div>   

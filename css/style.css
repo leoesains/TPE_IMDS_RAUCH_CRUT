@@ -1,5 +1,5 @@
 body{
-    background-image: url(planta.jpg);
+    background-image: url(../img/planta.jpg);
     background-size: 100vw 100vh; /*para que la imagen siempre tenga el 100% de la ventana*/
     background-attachment: fixed; /*para que la imagen quede fija en el scroll*/
     font-family: Arial, Helvetica, sans-serif;
@@ -77,50 +77,48 @@ footer{
     margin-left: 50px;  
 }
 .aviso_retiro{
-    background-image: url(aviso_de_retiro.png);
+    background-image: url(../img/avisoRetiro.png);
     /*margin-left: 50px;*/
     background-size: 100px;
 }
 .lista_materiales{
-    background-image: url(lista_de_materiales.png);
+    background-image: url(../img/materialesAceptados.png);
     margin-left: 50px;
-    background-size: 130px;
+    background-size: 120px;
 }
 .lista_cartonero{
-    background-image: url(listado_cartoneros.png);
+    background-image: url(../img/listado_cartoneros.png);
     margin-left: 400px;
     background-size: 150px;
 }
 .listado_materiales{
-    background-image: url(listado_de_materiales.png);
+    background-image: url(../img/gestionMateriales.png);
     background-size: 120px;
 }
 .cartelera{
-    background-image: url(cartelera.png);
-    background-size: 110px;
+    background-image: url(../img/cartelera.png);
+    background-size: 100px;
 }
 .pesaje{
-    background-image: url(balanza.png);
-    background-size: 140px;
+    background-image: url(../img/balanza.png);
+    background-size: 100px;
 }
 .stock{
-    background-image: url(stock.png);
+    background-image: url(../img/stock.png);
     background-size: 150px;
 }
 .cartonero{
-    background-image: url(ABMCart.png);
-    background-size: 140px;
-}
-.abmCartonero{
-    background-image: url(agregar.png);
-    background-size: 140px;
+    background-image: url(../img/gestionCartoneros.png);
+    background-size: 115px;
 }
 .materiales_aceptados{
-    margin-top: 80px;
+    margin: 60%;
     display:flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
 }
 .materiales_aceptados div{
     margin: 15px;
@@ -334,7 +332,6 @@ td {
     text-shadow:  -2px 2px 0 #3a3a3b;
 }
 .container-stock{   
-    
     width: auto; 
     border-radius: 20px;
     display: flex;
@@ -348,7 +345,6 @@ td {
     justify-content: center;    
     align-items: center;
     flex-direction: column;
-    
 }
 .bloque-centrado{
     margin: 10px;

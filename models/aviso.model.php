@@ -16,7 +16,7 @@ class AvisoModel extends dbConectionModel {
         $sql = "INSERT INTO aviso_de_retiro(nombre, apellido, direccion, telefono, email, franja_horaria, volumen, fotografia,estado,fecha_entrega) 
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?,?,?) ";
         $query = $this->getConnection()->prepare($sql);  
-        $query->execute([$nombre, $apellido, $direccion, $telefono, $email, $franja_horaria, $volumen, $path_img,$estado,$fecha_entrega]);        
+        return $query->execute([$nombre, $apellido, $direccion, $telefono, $email, $franja_horaria, $volumen, $path_img,$estado,$fecha_entrega]);        
     }
 
     private function uploadImage($imagen, $nombre_imagen){

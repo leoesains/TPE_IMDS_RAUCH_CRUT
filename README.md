@@ -1,9 +1,9 @@
-# Cooperativa de Recuperadores Urbanos de Tandil
+﻿# Cooperativa de Recuperadores Urbanos de Tandil
 Este sitio web fue desarrollado con tecnologias como: PHP, MYSQL, SMARTY, VUE, entre otras. Es un enfoque hibrido entre una aplicacion backend tradicional y una API REST, ambas siguen el modelo MVC (Modelo, Vista, Controlador).
 ## Comenzando 🔧
 Para poner en marcha este proyecto de manera local en tu equipo debes clonar el repositorio y contar con algunos pre-requisitos.
 ### Pre-requisitos 📋
-Para obtener una copia del repositorio deberemos tener instalado el software **Git** (Puedes precindir de el si deseas descargar el proyecto comprimido ZIP).
+Para obtener una copia del repositorio deberemos tener instalado el software **Git** (Puedes precindir de el si deseas descargar el proyecto comprimido ZIP)....
 
 Se debe instalar software como [**XAMPP**](https://www.apachefriends.org/es/ "link a xampp") o [**WAMP**](https://www.wampserver.com/en/ "link a wamp"), que nos brindan el paquete completo para gestión de bases de datos MySQL, el servidor web Apache y los intérpretes para lenguajes de script PHP y Perl.
 
